@@ -1,9 +1,13 @@
-import React from 'react';
+import ParticlesBackground from "./components/ParticlesBackground";
+import Navbar from "./components/Navbar";
+import Content from "./pages/Content";
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-2xl font-extrabold'>سلام</h1>
+    <div className='w-full flex flex-col min-h-screen   ' >
+      <ParticlesBackground/>
+      <Navbar/>
+      <Content/>
       
     </div>
   );
