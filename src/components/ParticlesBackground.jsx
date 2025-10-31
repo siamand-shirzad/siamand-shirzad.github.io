@@ -7,7 +7,6 @@ function ParticlesBackground() {
 
   useEffect(() => {
     initParticlesEngine(async engine => {
-      // بارگذاری کامل پلاگین‌ها
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
@@ -15,7 +14,7 @@ function ParticlesBackground() {
   }, []);
 
   if (!init) {
-    return null; // تا وقتی لود نشده چیزی نشون نده
+    return null;
   }
 
   return (
@@ -24,7 +23,7 @@ function ParticlesBackground() {
       options={{
         background: { color: '#141414' },
         particles: {
-          number: { value: 80 },
+          number: { value: 80 }, // دسکتاپ
           color: { value: '#ff3f81' },
           links: {
             enable: true,
@@ -44,26 +43,41 @@ function ParticlesBackground() {
             }
           },
           opacity: {
-            value: { min: 0.3, max: 0.5 }, // محدوده شفافیت
+            value: { min: 0.3, max: 0.5 },
             animation: {
               enable: true,
-              speed: 1, // سرعت تغییر شفافیت
+              speed: 1,
               minimumValue: 0.3,
-              sync: true // هر ذره مستقل چشمک بزنه
+              sync: true
             }
           }
         },
         interactivity: {
           events: {
             onHover: { enable: true, mode: ["grab", "connect"] },
-            onClick: { enable: true, mode: 'push' },
+            onClick: { enable: true, mode: 'push' }, // پیش‌فرض دسکتاپ
             resize: false
           },
           modes: {
             grab: { distance: 200, links: { opacity: 0.5 } },
             push: { quantity: 4 }
           }
-        }
+        },
+        responsive: [
+          {
+            maxWidth: 768, // موبایل و تبلت
+            options: {
+              particles: {
+                number: { value: 40 }, // ذرات کمتر
+              },
+              interactivity: {
+                events: {
+                  onClick: { enable: false } // کلیک غیرفعال روی موبایل
+                }
+              }
+            }
+          }
+        ]
       }}
     />
   );
