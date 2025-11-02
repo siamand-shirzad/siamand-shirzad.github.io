@@ -1,5 +1,5 @@
 import ParticlesBackground from "./components/ParticlesBackground";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Content from "./pages/Content";
 
 const App = () => {

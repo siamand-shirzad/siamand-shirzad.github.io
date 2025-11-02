@@ -21,7 +21,7 @@ function ParticlesBackground() {
     <Particles
       id="tsparticles"
       options={{
-        background: { color: '#141414' },
+        background: { color: '#0d0d0d' },
         particles: {
           number: { value: 80 }, // دسکتاپ
           color: { value: '#ff3f81' },

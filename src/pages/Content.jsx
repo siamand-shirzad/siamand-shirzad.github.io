@@ -3,7 +3,7 @@ import Home from './home/Home';
 
 const Content = () => {
   return (
-    <div className='h-[200vh] mt-14'>
+    <div className='h-[200vh] mt-28'>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
