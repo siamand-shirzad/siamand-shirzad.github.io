@@ -19,7 +19,7 @@ const Navbar = () => {
           ${isScrolled ? 'scrolled' : 'initial'}
         `}>
         <div className="nav-left">
-          <h1 className="text-white/90 font-bold text-lg text-glow-white">Siamand</h1>
+          <h1 className=" text-xl text-glow-white">Siamand</h1>
         </div>
 
         <nav className="nav-center hidden md:flex items-center gap-8">
@@ -38,7 +38,7 @@ const Navbar = () => {
         </nav>
 
         <div className="nav-right hidden md:flex items-center">
-          <a href="#contact" className="btn-cta">
+          <a href="#contact" className="btn-cta text-glow-white">
             Contact Me
           </a>
         </div>

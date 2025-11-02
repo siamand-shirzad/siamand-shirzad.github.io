@@ -1,21 +1,18 @@
 @import 'tailwindcss';
 
-/* @font-face {
-  font-family: shabnam;
-  src: url(./assets/fonts/Shabnam.ttf) format("woff");
-} */
- @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap');
+@font-face {
+  font-family: 'Figtree';
+  src: url('/src/assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
 
 body {
   font-family: 'Figtree', sans-serif;
+  /* letter-spacing: -1px; */
 }
 * {
   box-sizing: border-box;
-}
-:root {
-  --color-brand: #1e40af; /* آبی اصلی */
-  --color-accent: #f59e0b; /* زرد */
-  --color-dark: #111827; /* خاکستری خیلی تیره */
 }
 
 #tsparticles {
@@ -28,8 +25,5 @@ body {
 }
 .text-glow-white {
   color: #ffffff;
-  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 2px #ffffff1a, 0 0 4px #ffffff4d, 0 0 8px #fff3, 0 0 136px #783cff66;
 }
-
-
-
