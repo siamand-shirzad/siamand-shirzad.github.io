@@ -52,7 +52,7 @@ const Navbar = () => {
           {/* hamburger menu */}
           <div className="md:hidden scale-75">
             <label className="burger" htmlFor="burger">
-              <input type="checkbox" id="burger" onClick={() => setIsOpen(!isOpen)} />
+              <input type="checkbox" id="burger" onClick={() => setIsOpen(!isOpen)} checked={isOpen} />
               <span />
               <span />
               <span />
