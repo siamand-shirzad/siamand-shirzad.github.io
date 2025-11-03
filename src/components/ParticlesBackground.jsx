@@ -54,7 +54,7 @@ function ParticlesBackground() {
         },
         interactivity: {
           events: {
-            onHover: { enable: true, mode: ["grab", "connect"] },
+            onHover: { enable: true, mode: ['grab', 'connect'] },
             onClick: { enable: true, mode: 'push' }, // پیش‌فرض دسکتاپ
             resize: false
           },
@@ -68,11 +68,12 @@ function ParticlesBackground() {
             maxWidth: 768, // موبایل و تبلت
             options: {
               particles: {
-                number: { value: 40 }, // ذرات کمتر
+                number: { value: 30 } 
               },
               interactivity: {
                 events: {
-                  onClick: { enable: false } // کلیک غیرفعال روی موبایل
+                  onClick: { enable: false },
+                  onHover: { enable: false } 
                 }
               }
             }

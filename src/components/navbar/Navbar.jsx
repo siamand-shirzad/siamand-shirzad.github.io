@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <header className="header fixed top-0 left-0 right-0 z-50">
       <motion.div
-        animate={{ height: isOpen ? '90vh' : '4rem' }}
+        animate={{ height: isOpen ? '25rem' : '4rem' }}
         transition={{ type: 'spring', stiffness: 100, damping: 15 }}
         className={`max-w-7xl mx-auto landing-nav-items transition-all duration-500 ease-in-out overflow-hidden 
           ${isScrolled ? 'scrolled' : 'initial'}
@@ -60,14 +60,8 @@ const Navbar = () => {
           </div>
         </div>
         {/* منو موبایل با انیمیشن */}
-        <AnimatePresence>
           {isOpen && (
-            <motion.nav
-              key="mobile-menu"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
+            <nav
               className="flex flex-col gap-4 mt-4 items-center md:hidden">
               <NavLink to="/" className="nav-link"onClick={()=>setIsOpen(false)} >
                 Home
@@ -84,9 +78,8 @@ const Navbar = () => {
               <a href="#contact" className="btn-cta text-glow-white"onClick={()=>setIsOpen(false)} >
                 Contact Me
               </a>
-            </motion.nav>
+            </nav>
           )}
-        </AnimatePresence>
       </motion.div>
     </header>
   );
