@@ -21,6 +21,7 @@ function ParticlesBackground() {
     <Particles
       id="tsparticles"
       options={{
+        fpsLimit:30,
         background: { color: '#0d0d0d' },
         particles: {
           number: { value: 80 }, // دسکتاپ
@@ -68,7 +69,7 @@ function ParticlesBackground() {
             maxWidth: 768, // موبایل و تبلت
             options: {
               particles: {
-                number: { value: 30 } 
+                number: { value: 15 } 
               },
               interactivity: {
                 events: {
