@@ -20,7 +20,7 @@ const Navbar = () => {
     <header className="header fixed top-0 left-0 right-0 z-50">
       <motion.div
         animate={{ height: isOpen ? '25rem' : '4rem' }}
-        transition={{ type: 'spring', stiffness: 120, damping: 15 }}
+        transition={{ type: 'spring', stiffness: 150, damping: 15 }}
         className={`max-w-7xl mx-auto landing-nav-items transition-all duration-500 ease-in-out overflow-hidden 
           ${isScrolled ? 'scrolled' : 'initial'}
         `}>

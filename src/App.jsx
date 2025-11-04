@@ -1,4 +1,5 @@
 import ParticlesBackground from "./components/ParticlesBackground";
+import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Content from "./pages/Content";
 
@@ -8,6 +9,7 @@ const App = () => {
       <ParticlesBackground/>
       <Navbar/>
       <Content/>
+      <Footer/>
       
     </div>
   );
