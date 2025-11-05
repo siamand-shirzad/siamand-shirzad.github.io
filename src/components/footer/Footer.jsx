@@ -25,11 +25,11 @@ function Footer() {
           <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
           <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
           <li><a href="#projects" className="hover:text-white transition-colors">Projects</a></li>
-          <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="#Blog" className="hover:text-white transition-colors">Blog</a></li>
         </ul>
 
         {/* Social Icons */}
-        <SocialLinks />
+        <SocialLinks className={"text-2xl"} />
       </div>
 
       {/* Divider */}

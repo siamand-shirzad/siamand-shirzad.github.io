@@ -8,7 +8,7 @@ const App = () => {
     <div className='w-full flex flex-col min-h-screen   ' >
       <ParticlesBackground/>
       <Navbar/>
-      <Content/>
+      <Content />
       <Footer/>
       
     </div>

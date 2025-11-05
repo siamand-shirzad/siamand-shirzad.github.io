@@ -24,6 +24,11 @@ body {
   z-index: -1;
 }
 .text-glow-white {
-  color: #ffffff;
+  letter-spacing: -2px;
+  color: #fff;
   text-shadow: 0 0 2px #ffffff1a, 0 0 4px #ffffff4d, 0 0 8px #fff3, 0 0 136px #783cff66;
+}
+
+.noSelect{
+  user-select: none;
 }

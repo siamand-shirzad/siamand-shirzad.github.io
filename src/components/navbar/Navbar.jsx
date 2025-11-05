@@ -36,8 +36,8 @@ const Navbar = () => {
             <NavLink to="/about" className="nav-link">
               About
             </NavLink>
-            <NavLink to="/services" className="nav-link">
-              Services
+            <NavLink to="/Projects" className="nav-link">
+              Projects
             </NavLink>
             <NavLink to="/blog" className="nav-link">
               Blog
@@ -45,9 +45,9 @@ const Navbar = () => {
           </nav>
 
           <div className="nav-right hidden md:flex ">
-            <a href="#contact" className="btn-cta text-glow-white">
+            <NavLink to={"/contact"} className="btn-cta text-glow-white">
               Contact Me
-            </a>
+            </NavLink>
           </div>
           {/* hamburger menu */}
           <div className="md:hidden scale-75">
@@ -75,9 +75,9 @@ const Navbar = () => {
               <NavLink to="/blog" className="nav-link"onClick={()=>setIsOpen(false)} >
                 Blog
               </NavLink>
-              <a href="#contact" className="btn-cta text-glow-white"onClick={()=>setIsOpen(false)} >
+              <NavLink to={"/contact"} className="btn-cta text-glow-white"onClick={()=>setIsOpen(false)} >
                 Contact Me
-              </a>
+              </NavLink>
             </nav>
           )}
       </motion.div>
