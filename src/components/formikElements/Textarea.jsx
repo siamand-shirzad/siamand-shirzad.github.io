@@ -20,7 +20,7 @@ const Input = props => {
 					name={name}
 					id={name}
 					as='textarea'
-					className="peer text-gray-300 h-32  w-full bg-transparent outline-none px-4 py-2 rounded-xl border-1 focus:border-2 border-[#4070f4] focus:shadow-md text-right"
+					className="peer text-gray-300 h-32  w-full bg-transparent outline-none px-4 py-2 rounded-xl border-1 focus:border-2 border-[#4070f4] focus:shadow-md text-left"
 				/>
 
 				<label

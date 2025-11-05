@@ -45,7 +45,7 @@ const Navbar = () => {
           </nav>
 
           <div className="nav-right hidden md:flex ">
-            <NavLink to={"/contact"} className="btn-cta text-glow-white">
+            <NavLink to={"/contact"} className="btn-cta text-white tracking-tight">
               Contact Me
             </NavLink>
           </div>
