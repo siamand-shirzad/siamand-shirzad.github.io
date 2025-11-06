@@ -2,10 +2,15 @@ import SocialLinks from '../../components/footer/SocialLinks';
 import { Form, Formik } from 'formik';
 import FormikControl from '../../components/formikElements/FormikControl';
 import axios from 'axios';
-import { motion } from "framer-motion";
-
+import { motion } from 'framer-motion';
+import * as Yup from 'yup';
 
 const Contact = () => {
+  const validationSchema = Yup.object({
+    name: Yup.string().required('Name is required').min(2, 'Name must be at least 2 characters'),
+    email: Yup.string().email('Invalid email format'),
+    message: Yup.string().required('Message is required').min(10, 'Message must be at least 10 characters')
+  });
   const onSubmit = async (values, actions) => {
     try {
       const res = await axios.post('https://api.web3forms.com/submit', {
@@ -56,19 +61,28 @@ const Contact = () => {
             Contact Me
           </motion.h1>
           <p className="text-gray-300 text-lg text-center mb-10">You can also send me a message directly from here.</p>
-          <Formik initialValues={initialValues} onSubmit={onSubmit}>
+          <Formik
+            initialValues={initialValues}
+            onSubmit={onSubmit}
+            validationSchema={validationSchema}
+            // validateOnChange={false}
+            >
             {formik => {
+              console.log(formik);
+              
               return (
                 <Form className="space-y-5">
                   <FormikControl control="input" name="name" type="text" label="Name" {...formik} />
                   <FormikControl control="input" name="email" type="email" label="Email" />
                   <FormikControl control="textarea" name="message" label="message" />
                   <button
-                  disabled={formik.isSubmitting}
+                    disabled={formik.isSubmitting}
                     type="submit"
                     className="w-full flex justify-center items-center gap-3 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-semibold transition">
                     Send Message
-                    {formik.isSubmitting ?<span className="w-4 inline-block h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span> :null}
+                    {formik.isSubmitting ? (
+                      <span className="w-4 inline-block h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    ) : null}
                   </button>
                 </Form>
               );
