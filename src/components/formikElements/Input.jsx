@@ -21,8 +21,17 @@ const Input = props => {
           id={name}
           type={type}
           className={`peer  text-gray-300  w-full bg-transparent outline-none px-4 py-2 rounded-xl border-1 focus:border-2 border-[#4070f4] focus:shadow-md text-left ${
-            errors[name] ? '!border-red-500 border-1' : null
+            touched[name] && errors[name] ? '!border-red-500 border-1' : null
           }`}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              const form = e.target.form;
+              const index = Array.prototype.indexOf.call(form, e.target);
+              const next = form.elements[index + 1];
+              if (next) next.focus();
+            }
+          }}
         />
         {/* Error message */}
         {touched[name] && errors[name] && (
@@ -38,7 +47,7 @@ const Input = props => {
 					peer-focus:top-0 peer-focus:left-3 peer-focus:text-sm peer-focus:text-[#4070f4] ${
             hasValue ? ' !top-0 !left-3 !text-sm  !text-[#4070f4] ' : ''
           }
-						${errors[name] ? '!top-0 !left-3 !text-sm  !text-red-500' : 'border-black'} 
+						${touched[name] && errors[name] ? '!top-0 !left-3 !text-sm  !text-red-500' : 'border-black'} 
 					`}>
           {label}
         </label>

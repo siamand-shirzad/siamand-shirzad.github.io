@@ -71,14 +71,14 @@ const Contact = () => {
               console.log(formik);
               
               return (
-                <Form className="space-y-5">
+                <Form noValidate className="space-y-5">
                   <FormikControl control="input" name="name" type="text" label="Name" {...formik} />
                   <FormikControl control="input" name="email" type="email" label="Email" />
                   <FormikControl control="textarea" name="message" label="message" />
                   <button
                     disabled={formik.isSubmitting}
                     type="submit"
-                    className="w-full flex justify-center items-center gap-3 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-semibold transition">
+                    className="w-full cursor-pointer flex justify-center items-center gap-3 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-semibold transition">
                     Send Message
                     {formik.isSubmitting ? (
                       <span className="w-4 inline-block h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
