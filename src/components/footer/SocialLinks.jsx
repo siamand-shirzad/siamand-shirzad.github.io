@@ -9,10 +9,10 @@ import { motion } from "framer-motion";
 function SocialLinks({ className = "", size = "text-2xl", intensity = "medium" }) {
   const icons = [
     { Icon: FaInstagram, href: "https://www.instagram.com/_sia_sh_?igsh=MWlpc2NsejJoc2EyeQ==", colorClass: "hover:text-pink-400", glow: "rgba(236,72,153,0.85)" },
-    { Icon: FaGithub, href: "https://github.com/siamandshirzad", colorClass: "hover:text-gray-300", glow: "rgba(148,163,184,0.75)" },
+    { Icon: FaGithub, href: "https://github.com/siamand-shirzad", colorClass: "hover:text-gray-300", glow: "rgba(148,163,184,0.75)" },
     { Icon: FaLinkedin, href: "https://www.linkedin.com/in/siamand-shirzad-55986a2a4", colorClass: "hover:text-blue-400", glow: "rgba(59,130,246,0.85)" },
     { Icon: FaTelegram, href: "https://t.me/Siamandshirzad", colorClass: "hover:text-sky-400", glow: "rgba(56,189,248,0.85)" },
-    { Icon: FaEnvelope, href: "mailto:your@email.com", colorClass: "hover:text-red-400", glow: "rgba(239,68,68,0.85)" },
+    { Icon: FaEnvelope, href: "mailto:siamand1381@gmail.com", colorClass: "hover:text-red-400", glow: "rgba(239,68,68,0.85)" },
   ];
 
   // تنظیمات براساس intensity
