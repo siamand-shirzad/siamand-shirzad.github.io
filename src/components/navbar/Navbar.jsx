@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
@@ -26,7 +26,7 @@ const Navbar = () => {
         `}>
         <div className="flex items-center justify-between gap-5 h-16">
           <div className="nav-left">
-            <h1 className=" text-2xl text-glow-white ">Siamand</h1>
+            <Link to="/" className=" text-2xl text-glow-white ">Siamand</Link>
           </div>
 
           <nav className="nav-center hidden md:flex  gap-8">

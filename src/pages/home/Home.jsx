@@ -6,15 +6,15 @@ const Home = () => {
   return (
     <>
       {/* home */}
-      <section className=" flex flex-col min-h-[80vh] justify-center items-center text-center px-6">
-        <h1 className="text-2xl md:text-4xl  text-white mb-4">
+      <section className=" flex flex-col gap-6 min-h-[80vh] justify-center items-center text-center ">
+        <h1 className="text-2xl md:text-4xl  text-white ">
           Hi, I'm{' '}
           <span className="text-4xl font-semibold md:text-6xl bg-gradient-to-r from-indigo-600 via-cyan-500 to-indigo-800 bg-clip-text text-transparent gradientMove">
             Siamand
           </span>
         </h1>
         <h2 className="text-glow-white  text-6xl md:text-8xl">React developer</h2>
-        <p className="text-lg md:text-2xl text-white/90 max-w-2xl mb-8">
+        <p className="text-lg md:text-2xl text-white/90 max-w-2xl mb-2">
           A Front-End Developer specializing in React, creating modern and elegant web experiences.
         </p>
         <div className="flex gap-4">
@@ -32,7 +32,7 @@ const Home = () => {
         </div>
       </section>
       {/* {'about'} */}
-      <section className="min-h-[60vh] flex flex-col justify-center items-center text-center px-6 py-16">
+      <section className="min-h-[60vh] flex flex-col justify-center items-center text-center p-6 ">
         {/* About Me */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -54,7 +54,7 @@ const Home = () => {
           </div>
           </h2>
 
-          <p className="text-lg md:text-xl text-white/80 text-justify">
+          <p className="text-lg md:text-xl text-white/80 md:text-justify">
             Front-end developer focused on designing and implementing beautiful, fast, and responsive user interfaces. I
             am passionate about user experience (UX) and strive to create smooth and delightful experiences for users.
             My core expertise lies in technologies such as React, and TailwindCSS. Continuously updating my technical
@@ -63,7 +63,7 @@ const Home = () => {
           </p>
           <div className="flex flex-wrap gap-4 justify-center mt-6">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/siamand-shirzad"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/60 text-white font-medium backdrop-blur-sm hover:bg-white/10 transition-all duration-300">

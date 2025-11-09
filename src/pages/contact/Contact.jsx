@@ -39,7 +39,7 @@ const Contact = () => {
   };
   return (
     <>
-      <div className="min-h-screen bg-black/30 text-white rounded-2xl  backdrop-blur-[1px]  px-6 py-20 flex flex-col items-center">
+      <div className="min-h-screen  bg-black/30 text-white rounded-2xl  backdrop-blur-[1px]  px-6 py-20 flex flex-col items-center">
         <div className="max-w-3xl w-full text-center mb-12">
           <h2 className="text-5xl text-glow-white font-semibold  mb-4">
             Let's stay in <br /> touch

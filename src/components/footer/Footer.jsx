@@ -8,7 +8,7 @@ function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="bg-gradient-to-br md:backdrop-blur-md from-gray-950/30 via-gray-800/20 to-gray-950/30 text-gray-300 pb-6 pt-12  border-t border-gray-700/50 "
+      className="bg-gradient-to-br md:backdrop-blur-md from-gray-950/30 via-gray-800/20 to-gray-950/30 text-gray-300 pb-6 pt-12 mt-10 border-t border-gray-700/50 "
     >
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
         

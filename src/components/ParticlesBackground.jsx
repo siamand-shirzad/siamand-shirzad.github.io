@@ -72,7 +72,7 @@ function ParticlesBackground() {
             maxWidth: 768, // موبایل و تبلت
             options: {
               particles: {
-                number: { value: 15 }
+                number: { value: 35 }
               },
               interactivity: {
                 events: {
