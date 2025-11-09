@@ -26,7 +26,7 @@ const Navbar = () => {
         `}>
         <div className="flex items-center justify-between gap-5 h-16">
           <div className="nav-left">
-            <h1 className=" text-2xl text-glow-white">Siamand</h1>
+            <h1 className=" text-2xl text-glow-white ">Siamand</h1>
           </div>
 
           <nav className="nav-center hidden md:flex  gap-8">

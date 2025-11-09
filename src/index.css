@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Figtree', sans-serif;
+  user-select: none;
   /* letter-spacing: -1px; */
 }
 * {
@@ -31,4 +32,16 @@ body {
 
 .noSelect{
   user-select: none;
+}
+.gradientMove {
+  background-size: 200% 200%;
+  /* این انیمیشن background-position رو جلو می‌بره */
+  animation: gradientShift 5s ease infinite;
+}
+
+/* حرکت پیوسته از چپ به راست */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
