@@ -5,17 +5,18 @@ import About from '../about/About';
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {
-  const { hero, about, projects } = useContext(SectionsContext);
+  const refs = useContext(SectionsContext);
+  
+  const {hero,about,projects} = refs
   const location = useLocation();
 
  useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1); // "hero" یا "about" یا "projects"
 
-      const refsMap = { hero, about, projects };
-      const targetRef = refsMap[id];
+      const targetRef = refs[id];
 
-      targetRef?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      targetRef?.current?.scrollIntoView({ behavior: "auto", block: "start" });
     }
   }, [location, hero, about, projects]);
 

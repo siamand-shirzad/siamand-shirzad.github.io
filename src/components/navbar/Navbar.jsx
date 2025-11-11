@@ -10,15 +10,6 @@ const Navbar = () => {
   const { hero, about, projects } = useContext(SectionsContext);
   const navigate = useNavigate();
 
-  const scrollTo = ref => {
-    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  };
-  const handleNavClick = ref => {
-    navigate('/');
-    setIsOpen(false);
-    scrollTo(ref);
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerWidth > 768) {
@@ -44,15 +35,15 @@ const Navbar = () => {
           </div>
 
           <nav className="nav-center hidden md:flex  gap-8">
-            <NavLink to="/#hero" className="nav-link" onClick={() => setIsOpen(false)}>
+            <Link to="/#hero" className="nav-link" onClick={() => setIsOpen(false)}>
               Home
-            </NavLink>
-            <NavLink to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
+            </Link>
+            <Link to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
               About
-            </NavLink>
-            <NavLink to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
+            </Link>
+            <Link to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
               Projects
-            </NavLink>
+            </Link>
 
             <NavLink to="/blog" className="nav-link">
               Blog

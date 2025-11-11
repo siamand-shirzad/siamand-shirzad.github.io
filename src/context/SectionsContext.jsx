@@ -6,12 +6,15 @@ import { createContext, useRef } from "react";
 export const SectionsContext = createContext(null)
 
 const SectionsContextProvider = ({children})=>{
-  const hero = useRef(null)
-  const about = useRef(null)
-  const projects = useRef(null)
+  const refs ={
 
+     hero : useRef(null),
+     about : useRef(null),
+     projects : useRef(null),
+  }
+    
   return (
-    <SectionsContext.Provider value={{hero,about, projects}}>
+    <SectionsContext.Provider value={refs}>
       {children}
     </SectionsContext.Provider>
   )
