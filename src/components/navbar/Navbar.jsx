@@ -1,11 +1,23 @@
-import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
+import { SectionsContext } from '../../context/SectionsContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { hero, about, projects } = useContext(SectionsContext);
+  const navigate = useNavigate();
+
+  const scrollTo = ref => {
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+  const handleNavClick = ref => {
+    navigate('/');
+    setIsOpen(false);
+    scrollTo(ref);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,33 +38,36 @@ const Navbar = () => {
         `}>
         <div className="flex items-center justify-between gap-5 h-16">
           <div className="nav-left">
-            <Link to="/" className=" text-2xl text-glow-white ">Siamand</Link>
+            <Link to="/#hero" className=" text-2xl text-glow-white ">
+              Siamand
+            </Link>
           </div>
 
           <nav className="nav-center hidden md:flex  gap-8">
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/#hero" className="nav-link" onClick={() => setIsOpen(false)}>
               Home
             </NavLink>
-            <NavLink to="/about" className="nav-link">
+            <NavLink to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
               About
             </NavLink>
-            <NavLink to="/Projects" className="nav-link">
+            <NavLink to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
               Projects
             </NavLink>
+
             <NavLink to="/blog" className="nav-link">
               Blog
             </NavLink>
           </nav>
 
           <div className="nav-right hidden md:flex ">
-            <NavLink to={"/contact"} className="btn-cta text-white tracking-tight">
+            <NavLink to={'/contact'} className="btn-cta text-white tracking-tight">
               Contact Me
             </NavLink>
           </div>
           {/* hamburger menu */}
           <div className="md:hidden scale-75">
             <label className="burger" htmlFor="burger">
-              <input type="checkbox" id="burger" onClick={() => setIsOpen(!isOpen)} checked={isOpen} />
+              <input type="checkbox" id="burger" onChange={e => setIsOpen(e.target.checked)} checked={isOpen} />
               <span />
               <span />
               <span />
@@ -60,26 +75,25 @@ const Navbar = () => {
           </div>
         </div>
         {/* منو موبایل با انیمیشن */}
-          {isOpen && (
-            <nav
-              className="flex flex-col gap-4 mt-4 items-center md:hidden">
-              <NavLink to="/" className="nav-link"onClick={()=>setIsOpen(false)} >
-                Home
-              </NavLink>
-              <NavLink to="/about" className="nav-link"onClick={()=>setIsOpen(false)} >
-                About
-              </NavLink>
-              <NavLink to="/services" className="nav-link"onClick={()=>setIsOpen(false)} >
-                Services
-              </NavLink>
-              <NavLink to="/blog" className="nav-link"onClick={()=>setIsOpen(false)} >
-                Blog
-              </NavLink>
-              <NavLink to={"/contact"} className="btn-cta text-glow-white"onClick={()=>setIsOpen(false)} >
-                Contact Me
-              </NavLink>
-            </nav>
-          )}
+        {isOpen && (
+          <nav className="flex flex-col gap-4 mt-4 items-center md:hidden">
+            <NavLink to="/#hero" className="nav-link" onClick={() => setIsOpen(false)}>
+              Home
+            </NavLink>
+            <NavLink to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
+              About
+            </NavLink>
+            <NavLink to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
+              Projects
+            </NavLink>
+            <NavLink to="/blog" className="nav-link" onClick={() => setIsOpen(false)}>
+              Blog
+            </NavLink>
+            <NavLink to={'/contact'} className="btn-cta text-glow-white" onClick={() => setIsOpen(false)}>
+              Contact Me
+            </NavLink>
+          </nav>
+        )}
       </motion.div>
     </header>
   );
