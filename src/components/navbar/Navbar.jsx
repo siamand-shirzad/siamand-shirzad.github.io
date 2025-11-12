@@ -2,13 +2,10 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
-import { SectionsContext } from '../../context/SectionsContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const { hero, about, projects } = useContext(SectionsContext);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +26,7 @@ const Navbar = () => {
         `}>
         <div className="flex items-center justify-between gap-5 h-16">
           <div className="nav-left">
-            <Link to="/#hero" className=" text-2xl text-glow-white ">
+            <Link to="/#hero" className=" text-3xl text-glow-white ">
               Siamand
             </Link>
           </div>
@@ -56,7 +53,7 @@ const Navbar = () => {
             </NavLink>
           </div>
           {/* hamburger menu */}
-          <div className="md:hidden scale-75">
+          <div className="md:hidden ">
             <label className="burger" htmlFor="burger">
               <input type="checkbox" id="burger" onChange={e => setIsOpen(e.target.checked)} checked={isOpen} />
               <span />

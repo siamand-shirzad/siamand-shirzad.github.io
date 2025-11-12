@@ -11,6 +11,7 @@ const Home = () => {
   const location = useLocation();
 
  useEffect(() => {
+  
     if (location.hash) {
       const id = location.hash.slice(1); // "hero" یا "about" یا "projects"
 
@@ -18,7 +19,7 @@ const Home = () => {
 
       targetRef?.current?.scrollIntoView({ behavior: "auto", block: "start" });
     }
-  }, [location, hero, about, projects]);
+  }, [location]);
 
 
   return (

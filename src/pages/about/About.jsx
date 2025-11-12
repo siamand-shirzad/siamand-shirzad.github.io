@@ -1,15 +1,60 @@
-import { FaReact, FaCss3Alt, FaHtml5, FaGithub, FaArrowCircleDown } from 'react-icons/fa';
-import { SiTailwindcss, SiFramer } from 'react-icons/si';
+import { FaReact, FaCss3Alt, FaHtml5, FaGithub, FaArrowCircleDown, FaBootstrap, FaGitAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer } from 'react-icons/si';
+import LogoLoop from '@/components/LogoLoop';
 
+const About = ({ innerRef }) => {
+  const techLogos = [
+    {
+      node: <FaBootstrap className="text-white hover:text-purple-800 transition-colors" />,
+      title: 'Bootstrap',
+      href: 'https://getbootstrap.com'
+    },
+    {
+      node: <FaHtml5 className="text-white hover:text-orange-700 transition-colors" />,
+      title: 'HTML5',
+      href: 'https://developer.mozilla.org/docs/Web/HTML'
+    },
+    {
+      node: <FaCss3Alt className="text-white hover:text-blue-700 transition-colors" />,
+      title: 'CSS3',
+      href: 'https://developer.mozilla.org/docs/Web/CSS'
+    },
+    {
+      node: <FaGitAlt className="text-white hover:text-red-700 transition-colors" />,
+      title: 'Git',
+      href: 'https://git-scm.com'
+    },
 
-const About = ({innerRef}) => {
+    {
+      node: <SiReact className="text-white hover:text-cyan-600 transition-colors" />,
+      title: 'React',
+      href: 'https://react.dev'
+    },
+    {
+      node: <SiNextdotjs className="text-white hover:text-gray-700 transition-colors" />,
+      title: 'Next.js',
+      href: 'https://nextjs.org'
+    },
+    {
+      node: <SiTypescript className="text-white hover:text-blue-700 transition-colors" />,
+      title: 'TypeScript',
+      href: 'https://www.typescriptlang.org'
+    },
+    {
+      node: <SiTailwindcss className="text-white hover:text-sky-600 transition-colors" />,
+      title: 'Tailwind CSS',
+      href: 'https://tailwindcss.com'
+    },
+    {
+      node: <SiFramer className="text-white hover:text-pink-600 transition-colors" />,
+      title: 'Framer Motion',
+      href: 'https://www.framer.com/motion/'
+    }
+  ];
   return (
     <>
-      <section
-        ref={innerRef}
-        id="about"
-        className="min-h-[60vh] flex flex-col justify-center items-center text-center p-6 ">
+      <section ref={innerRef} id="about" className=" flex flex-col justify-center items-center text-center p-6 ">
         {/* About Me */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -58,7 +103,6 @@ const About = ({innerRef}) => {
           </div>
         </motion.div>
 
-        {/* Tech Stack */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -73,6 +117,22 @@ const About = ({innerRef}) => {
           <FaGithub className="hover:text-gray-400 transition-colors" />
         </motion.div>
       </section>
+
+      <div className="mx-auto" style={{ width: '70%', height: '200px', position: 'relative', overflow: 'hidden' }}>
+        {/* ✅ LogoLoop با آرایه‌ی پایدار */}
+        <LogoLoop
+          logos={techLogos}
+          speed={120}
+          direction="left"
+          logoHeight={48}
+          gap={40}
+          hoverSpeed={0}
+          scaleOnHover
+          fadeOut
+          fadeOutColor="#0d0d0d"
+          ariaLabel="Technology partners"
+        />
+      </div>
     </>
   );
 };
