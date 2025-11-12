@@ -52,7 +52,7 @@ function ParticlesBackground() {
         interactivity: {
           detectsOn: 'window',
           events: {
-            onHover: { enable: true, mode: ['grab', 'connect'], parallax: { enable: true, force: 5, smooth: 25 } },
+            onHover: { enable: true, mode: ['grab', 'connect'], parallax: { enable: true, force: 7, smooth: 75 } },
             onClick: { enable: true, mode: 'push' }, // پیش‌فرض دسکتاپ
             resize: false
           },

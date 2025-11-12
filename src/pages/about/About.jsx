@@ -71,7 +71,7 @@ const About = ({ innerRef }) => {
                 viewport={{ once: false, amount: 0.6 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 style={{ transformOrigin: 'center' }}
-                className="h-1.5 bg-gradient-to-r from-indigo-800 via-indigo-500 to-indigo-800 rounded-full"
+                className="h-1.5 bg-linear-to-r from-indigo-800 via-indigo-500 to-indigo-800 rounded-full"
               />
             </div>
           </h2>
@@ -103,7 +103,7 @@ const About = ({ innerRef }) => {
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -115,10 +115,10 @@ const About = ({ innerRef }) => {
           <FaCss3Alt className="hover:text-blue-400 transition-colors" />
           <FaHtml5 className="hover:text-orange-400 transition-colors" />
           <FaGithub className="hover:text-gray-400 transition-colors" />
-        </motion.div>
+        </motion.div> */}
       </section>
 
-      <div className="mx-auto" style={{ width: '70%', height: '200px', position: 'relative', overflow: 'hidden' }}>
+      <div className="mx-auto  " style={{ width: '100%', height: '200px', position: 'relative', overflow: 'hidden' }}>
         {/* ✅ LogoLoop با آرایه‌ی پایدار */}
         <LogoLoop
           logos={techLogos}
