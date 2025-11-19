@@ -4,6 +4,8 @@ import FormikControl from '../../components/formikElements/FormikControl';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
+import { CircleCheck } from 'lucide-react';
 
 const Contact = () => {
   const validationSchema = Yup.object({
@@ -11,26 +13,43 @@ const Contact = () => {
     email: Yup.string().email('Invalid email format'),
     message: Yup.string().required('Message is required').min(10, 'Message must be at least 10 characters')
   });
-  const onSubmit = async (values, actions) => {
-    try {
-      const res = await axios.post('https://api.web3forms.com/submit', {
-        access_key: 'e7732b83-2b09-4688-9a5a-35fce32dad84',
-        name: values.name,
-        email: values.email,
-        message: values.message
-      });
 
-      if (res.data.success) {
-        alert('Message sent successfully! ✅');
-        actions.resetForm();
-      } else {
-        alert('Something went wrong. ❌');
-      }
-    } catch (error) {
-      console.error(error);
-      alert('There was an error sending your message. ❌');
+const onSubmit = async (values, actions) => {
+  const sendPromise = axios.post('https://api.web3forms.com/submit', {
+    access_key: 'e7732b83-2b09-4688-9a5a-35fce32dad84',
+    name: values.name,
+    email: values.email,
+    message: values.message
+  });
+
+  toast.promise(
+    sendPromise,
+    {
+      pending: "Sending your message...",
+      success: "Your message has been sent successfully ",
+      error: "Failed to send your message ",
+    },
+    {
+      position: "top-right",
+      hideProgressBar: false,
+      // closeOnClick: true,
+      pauseOnHover: true,
     }
-  };
+  );
+
+  try {
+    const res = await sendPromise;
+
+    if (res.data.success) {
+      actions.resetForm(); // Reset form on success
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+  // const showToast = () => {
+  //   toast(  'hello worlda'  );
+  // };
 
   const initialValues = {
     name: '',
@@ -53,6 +72,9 @@ const Contact = () => {
           <SocialLinks className={' gap-8'} size="text-6xl" />
         </div>
         <div className="mt-20 md:w-1/2 bg-[#141417] p-8 rounded-2xl shadow-lg shadow-black/40 ">
+          {/* <button onClick={showToast} className="px-4 py-2 bg-blue-600 text-white rounded">
+            نمایش Toast
+          </button>{' '} */}
           <motion.h1
             className="text-4xl font-bold text-center text-glow-white"
             initial={{ opacity: 0, scale: 0.75 }}
@@ -66,10 +88,10 @@ const Contact = () => {
             onSubmit={onSubmit}
             validationSchema={validationSchema}
             // validateOnChange={false}
-            >
+          >
             {formik => {
-              console.log(formik);
-              
+              // console.log(formik);
+
               return (
                 <Form noValidate className="space-y-5">
                   <FormikControl control="input" name="name" type="text" label="Name" {...formik} />
