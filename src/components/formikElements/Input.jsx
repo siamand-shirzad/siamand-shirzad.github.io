@@ -24,12 +24,24 @@ const Input = props => {
             touched[name] && errors[name] ? '!border-red-500 border-1' : null
           }`}
           onKeyDown={e => {
+            
+            const form = e.target.form; // کل فرم
+            
+            console.log(form.elements);
+            const elements = Array.from(form.elements); // همه‌ی المان‌های فرم به صورت آرایه
+            const index = elements.indexOf(e.target); // جایگاه المان فعلی
             if (e.key === 'Enter') {
-              e.preventDefault();
-              const form = e.target.form;
-              const index = Array.prototype.indexOf.call(form, e.target);
-              const next = form.elements[index + 1];
-              if (next) next.focus();
+              e.preventDefault(); // جلوگیری از submit شدن فرم
+              const next = elements[index + 1]; // المان بعدی
+
+              if (next) {
+                next.focus(); // فوکوس روی فیلد بعدی
+              }
+            }
+            if (e.key === 'Backspace' && e.target.value === '') {
+              e.preventDefault()
+              const prev = elements[index - 1];
+              if (prev) prev.focus();
             }
           }}
         />
