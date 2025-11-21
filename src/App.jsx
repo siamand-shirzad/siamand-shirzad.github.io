@@ -2,7 +2,7 @@ import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import SectionsContextProvider from './context/SectionsContext';
 import Content from './pages/Content';
-import ParticlesBackground from './components/ParticlesBackground';
+import ParticlesBackground from './components/vendor/ParticlesBackground';
 import { ToastContainer } from 'react-toastify';
 import ProgressBar from './components/ui/ProgressBar';
 

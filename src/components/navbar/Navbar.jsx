@@ -65,15 +65,15 @@ const Navbar = () => {
         {/* منو موبایل با انیمیشن */}
         {isOpen && (
           <nav className="flex flex-col gap-4 mt-4 items-center md:hidden">
-            <NavLink to="/#hero" className="nav-link" onClick={() => setIsOpen(false)}>
+            <Link to="/#hero" className="nav-link" onClick={() => setIsOpen(false)}>
               Home
-            </NavLink>
-            <NavLink to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
+            </Link>
+            <Link to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
               About
-            </NavLink>
-            <NavLink to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
+            </Link>
+            <Link to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
               Projects
-            </NavLink>
+            </Link>
             <NavLink to="/blog" className="nav-link" onClick={() => setIsOpen(false)}>
               Blog
             </NavLink>

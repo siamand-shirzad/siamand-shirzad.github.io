@@ -1,5 +1,5 @@
-import FadeContent from '@/components/FadeContent';
-import SplitText from '@/components/SplitText';
+import FadeContent from '@/components/vendor/FadeContent';
+import SplitText from '@/components/vendor/SplitText';
 import { FaReact, FaCss3Alt, FaHtml5, FaGithub, FaArrowCircleDown } from 'react-icons/fa';
 import { SiTailwindcss, SiFramer } from 'react-icons/si';
 

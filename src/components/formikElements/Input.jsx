@@ -21,7 +21,7 @@ const Input = props => {
           id={name}
           type={type}
           className={`peer  text-gray-300  w-full bg-transparent outline-none px-4 py-2 rounded-xl border-1 focus:border-2 border-[#4070f4] focus:shadow-md text-left ${
-            touched[name] && errors[name] ? '!border-red-500 border-1' : null
+            touched[name] && errors[name] ? '!border-red-500 border' : null
           }`}
           onKeyDown={e => {
             

@@ -1,7 +1,8 @@
 import { FaReact, FaCss3Alt, FaHtml5, FaGithub, FaArrowCircleDown, FaBootstrap, FaGitAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer } from 'react-icons/si';
-import LogoLoop from '@/components/LogoLoop';
+import LogoLoop from '@/components/vendor/LogoLoop';
+import SpotlightCard from '@/components/vendor/SpotlightCard';
 
 const About = ({ innerRef }) => {
   const techLogos = [
@@ -133,6 +134,11 @@ const About = ({ innerRef }) => {
           ariaLabel="Technology partners"
         />
       </div>
+
+      <SpotlightCard className="custom-spotlight-card w-1/3 h-50 mx-auto" spotlightColor="rgba(0, 229, 255, 0.2)">
+        // Content goes here
+      </SpotlightCard>
+
     </>
   );
 };
