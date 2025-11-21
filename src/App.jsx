@@ -4,10 +4,14 @@ import SectionsContextProvider from './context/SectionsContext';
 import Content from './pages/Content';
 import ParticlesBackground from './components/ParticlesBackground';
 import { ToastContainer } from 'react-toastify';
+import ProgressBar from './components/ui/ProgressBar';
 
 const App = () => {
+  
+
   return (
-    <div className="w-full flex flex-col min-h-screen   ">
+    <div className="w-full flex flex-col min-h-screen relative  ">
+      <ProgressBar/>
       <SectionsContextProvider>
         <ParticlesBackground />
         <Navbar />
@@ -21,7 +25,7 @@ const App = () => {
           toastClassName="!bg-black/10 !backdrop-blur-md !border !border-white/10 !text-gray-100  max-md:!rounded-md  "
           bodyClassName="!text-sm !text-gray-900 "
           // progressClassName="!bg-gray-500"
-        />{' '}
+        />
       </SectionsContextProvider>
     </div>
   );
