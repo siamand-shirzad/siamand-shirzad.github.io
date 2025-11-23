@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -10,18 +10,33 @@
   font-style: normal;
 }
 
-body {
-  font-family: 'Figtree', sans-serif;
-  user-select: none;
-  /* letter-spacing: -1px; */
-}
-* {
-  box-sizing: border-box;
-}
-section {
-  scroll-margin-top: 5rem; 
+@layer base {
+  body {
+    font-family: 'Figtree', sans-serif;
+    user-select: none;
+    /* letter-spacing: -1px; */
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  section {
+    scroll-margin-top: 5rem;
+  }
 }
 
+@layer utilities {
+  .text-glow-white {
+    /* letter-spacing: -2px !important; */
+    color: #fff;
+    text-shadow: 0 0 2px #ffffff1a, 0 0 4px #ffffff4d, 0 0 8px #fff3, 0 0 136px #783cff66;
+  }
+  .gradientMove {
+    background-size: 200% 200%;
+    animation: gradientShift 5s linear infinite;
+  }
+}
 #tsparticles {
   position: fixed;
   top: 0;
@@ -30,28 +45,25 @@ section {
   height: 100%;
   z-index: -1;
 }
-.text-glow-white {
-  /* letter-spacing: -2px !important; */
-  color: #fff;
-  text-shadow: 0 0 2px #ffffff1a, 0 0 4px #ffffff4d, 0 0 8px #fff3, 0 0 136px #783cff66;
-}
 
-.noSelect{
+.noSelect {
   user-select: none;
-}
-.gradientMove {
-  background-size: 200% 200%;
-  animation: gradientShift 5s linear infinite;
 }
 
 /* حرکت پیوسته از چپ به راست */
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-@theme inline {
+/* @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -156,13 +168,32 @@ section {
   --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
-}
+} */
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
+} */
+
+@theme {
+  --color-primary: #f9fafb;        /* رنگ اصلی متن/دکمه */
+  --color-secondary: #999ba5;      /* رنگ مکمل یا تیتر */
+  --color-bg: rgba(16 18 27 / 40%); /* پس‌زمینه کلی */
+  --color-card: rgb(146 151 179 / 13%);
+  --color-hover: rgba(12 15 25 / 30%);
+  --color-border: rgba(113 119 144 / 25%);
+  --color-overlay: rgba(36 39 59 / 30%);
+}
+@theme {
+  --color-primary: #f9fafb;              /* متن روشن */
+  --color-secondary: #999ba5;            /* متن فرعی */
+  --color-bg: rgba(16 18 27 / 40%);      /* پس‌زمینه کلی */
+  --color-card: rgba(255 255 255 / 10%); /* کارت شیشه‌ای */
+  --color-border: rgba(255 255 255 / 0.2); /* مرز شفاف */
+  --color-hover: rgba(255 255 255 / 0.15); /* هاور کارت */
+  --color-overlay: rgba(36 39 59 / 30%); /* لایه overlay */
 }

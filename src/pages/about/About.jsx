@@ -135,7 +135,7 @@ const About = ({ innerRef }) => {
         />
       </div>
 
-      <SpotlightCard className="custom-spotlight-card w-1/3 h-50 mx-auto" spotlightColor="rgba(0, 229, 255, 0.2)">
+      <SpotlightCard className="custom-spotlight-card w-1/3 h-50 mx-auto" >
         // Content goes here
       </SpotlightCard>
 
