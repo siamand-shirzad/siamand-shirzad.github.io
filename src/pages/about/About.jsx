@@ -2,7 +2,6 @@ import { FaReact, FaCss3Alt, FaHtml5, FaGithub, FaArrowCircleDown, FaBootstrap, 
 import { motion } from 'framer-motion';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer } from 'react-icons/si';
 import LogoLoop from '@/components/vendor/LogoLoop';
-import SpotlightCard from '@/components/vendor/SpotlightCard';
 
 const About = ({ innerRef }) => {
   const techLogos = [
@@ -118,9 +117,8 @@ const About = ({ innerRef }) => {
           <FaGithub className="hover:text-gray-400 transition-colors" />
         </motion.div> */}
       </section>
-
-      <div className="mx-auto  " style={{ width: '100%', height: '200px', position: 'relative', overflow: 'hidden' }}>
-        {/* ✅ LogoLoop با آرایه‌ی پایدار */}
+      {/* logoloop     */}
+      <div className="mx-auto  " style={{ width: '100%', height: '150px', position: 'relative', overflow: 'hidden' }}>
         <LogoLoop
           logos={techLogos}
           speed={120}
@@ -134,11 +132,6 @@ const About = ({ innerRef }) => {
           ariaLabel="Technology partners"
         />
       </div>
-
-      <SpotlightCard className="custom-spotlight-card w-1/3 h-50 mx-auto" >
-        // Content goes here
-      </SpotlightCard>
-
     </>
   );
 };

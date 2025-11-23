@@ -40,6 +40,9 @@ const Navbar = () => {
             <Link to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
               About
             </Link>
+            <Link to="/#services" className="nav-link" onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
             <Link to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
               Projects
             </Link>
@@ -73,13 +76,16 @@ const Navbar = () => {
             <Link to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>
               About
             </Link>
+            <Link to="/#services" className="nav-link" onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
             <Link to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
               Projects
             </Link>
             <NavLink to="/blog" className="nav-link" onClick={() => setIsOpen(false)}>
               Blog
             </NavLink>
-            <NavLink to={'/contact'} className="btn-cta text-glow-white" onClick={() => setIsOpen(false)}>
+            <NavLink to={'/contact'} className="btn-cta mt-2 text-glow-white" onClick={() => setIsOpen(false)}>
               Contact Me
             </NavLink>
           </nav>

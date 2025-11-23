@@ -22,8 +22,9 @@
   }
 
   section {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 4rem;
   }
+
 }
 
 @layer utilities {
@@ -36,6 +37,10 @@
     background-size: 200% 200%;
     animation: gradientShift 5s linear infinite;
   }
+  #services{
+    scroll-margin-top: 12rem ;
+  }
+
 }
 #tsparticles {
   position: fixed;
@@ -187,13 +192,4 @@
   --color-hover: rgba(12 15 25 / 30%);
   --color-border: rgba(113 119 144 / 25%);
   --color-overlay: rgba(36 39 59 / 30%);
-}
-@theme {
-  --color-primary: #f9fafb;              /* متن روشن */
-  --color-secondary: #999ba5;            /* متن فرعی */
-  --color-bg: rgba(16 18 27 / 40%);      /* پس‌زمینه کلی */
-  --color-card: rgba(255 255 255 / 10%); /* کارت شیشه‌ای */
-  --color-border: rgba(255 255 255 / 0.2); /* مرز شفاف */
-  --color-hover: rgba(255 255 255 / 0.15); /* هاور کارت */
-  --color-overlay: rgba(36 39 59 / 30%); /* لایه overlay */
 }

@@ -10,7 +10,7 @@ const SectionsContextProvider = ({children})=>{
 
      hero : useRef(null),
      about : useRef(null),
-    //  projects : useRef(null),
+     services : useRef(null),
   }
     
   return (
