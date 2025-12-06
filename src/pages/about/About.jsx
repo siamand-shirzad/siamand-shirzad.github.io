@@ -94,7 +94,7 @@ const About = ({ innerRef }) => {
             </a>
 
             <a
-              href="/cv.pdf"
+              href="/Siamand_resume_EN.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/60 text-white font-medium backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
               <FaArrowCircleDown className="text-xl" />

@@ -59,6 +59,7 @@ const Hero = ({ innerRef }) => {
             <FaArrowCircleDown className="text-lg" />
           </a>
         </div>
+        
       </section>
     </>
   );

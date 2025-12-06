@@ -1,6 +1,6 @@
 // src/ui/Glass.jsx
 import React from "react";
-import "./Glass.css"; // ← ایمپورت CSS همین‌جا
+import "./Glass.css"; 
 
 const Glass = ({ children, className = "" }) => {
   return (
