@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './home/Home';
 import Contact from './contactMe/ContactMe';
+import Project from './projects/index';
 import ScrollToTop from '../components/ui/ScrollToTop';
 
 const Content = () => {
@@ -10,6 +11,7 @@ const Content = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/projects" element={<Project />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </div>

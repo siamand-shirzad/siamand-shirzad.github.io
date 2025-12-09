@@ -103,19 +103,6 @@ const About = ({ innerRef }) => {
           </div>
         </motion.div>
 
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-3 md:grid-cols-6 gap-8 text-white text-5xl">
-          <FaReact className="hover:text-cyan-400 transition-colors" />
-          <SiTailwindcss className="hover:text-sky-400 transition-colors" />
-          <SiFramer className="hover:text-pink-400 transition-colors" />
-          <FaCss3Alt className="hover:text-blue-400 transition-colors" />
-          <FaHtml5 className="hover:text-orange-400 transition-colors" />
-          <FaGithub className="hover:text-gray-400 transition-colors" />
-        </motion.div> */}
       </section>
       {/* logoloop     */}
       <div className="mx-auto  " style={{ width: '100%', height: '150px', position: 'relative', overflow: 'hidden' }}>

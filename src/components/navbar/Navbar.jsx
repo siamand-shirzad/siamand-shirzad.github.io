@@ -43,7 +43,7 @@ const Navbar = () => {
                 <Link to="/#services" className="nav-link" onClick={() => setIsOpen(false)}>
                   Services
                 </Link>
-                <Link to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
+                <Link to="/projects" className="nav-link" onClick={() => setIsOpen(false)}>
                   Projects
                 </Link>
 
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <Link to="/#services" className="nav-link" onClick={() => setIsOpen(false)}>
                   Services
                 </Link>
-                <Link to="/#projects" className="nav-link" onClick={() => setIsOpen(false)}>
+                <Link to="/projects" className="nav-link" onClick={() => setIsOpen(false)}>
                   Projects
                 </Link>
                 <NavLink to="/blog" className="nav-link" onClick={() => setIsOpen(false)}>

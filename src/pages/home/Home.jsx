@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react';
 import { SectionsContext } from '../../context/SectionsContext';
 import Hero from './Hero';
-import About from '../about/About';
+import About from './About';
 import { useLocation } from 'react-router-dom';
-import Services from '../Services';
+import Services from './Services';
 
 const Home = () => {
   const refs = useContext(SectionsContext);
