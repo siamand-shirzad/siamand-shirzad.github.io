@@ -52,14 +52,14 @@ const Services = ({ innerRef }) => {
             viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             style={{ transformOrigin: 'center' }}
-            className="h-1.5 bg-linear-to-r from-indigo-800 via-indigo-500 to-indigo-800 rounded-full"
+            className="h-1.5  bg-linear-to-r from-indigo-800 via-indigo-500 to-indigo-800 rounded-full"
           />
         </div>
       </h2>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 ">
         {skills.map((skill, index) => (
-          <SpotlightCard key={index} className="p-6 backdrop-blur-xs " spotlightColor='rgba(83, 23, 98, 0.25)'>
+          <SpotlightCard key={index} className="p-6 backdrop-blur-xs border border-white/5" spotlightColor='rgba(255, 255, 255, 0.15)'>
             <div className=" mb-2 flex justify-center">{skill.icon}</div>
             <h3 className="text-xl  text-gray-300 text font-semibold mb-2">{skill.title}</h3>
             <p className="text-sm opacity-80 text-primary leading-relaxed">{skill.desc}</p>
