@@ -7,7 +7,6 @@ import { CgWebsite } from 'react-icons/cg'; // آیکون برای پروژه‌
 import { Link } from 'react-router-dom';
 
 const Hero = ({ innerRef }) => {
-  // لیست شبکه‌های اجتماعی برای تمیزتر شدن کد JSX
   const socialLinks = [
     { icon: <FaGithub />, link: 'https://github.com/siamand-shirzad', label: 'Github' },
     { icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/siamand-shirzad-55986a2a4', label: 'LinkedIn' },
@@ -19,7 +18,7 @@ const Hero = ({ innerRef }) => {
     <section
       ref={innerRef}
       id="hero"
-      className="flex flex-col gap-8 min-h-[85vh] justify-center items-center text-center px-4 md:mb-16">
+      className="flex flex-col gap-8  justify-center items-center text-center px-4 md:mb-16">
       <FadeContent blur={true} duration={1000} easing="ease-out" delay={200} initialOpacity={0}>
         <h1 className="text-2xl md:text-4xl text-white font-light">
           Hi, I'm{' '}
@@ -65,7 +64,7 @@ const Hero = ({ innerRef }) => {
           <HiDocumentDownload className="text-xl" />
         </a>
       </div>
-      {/* --- بخش شبکه‌های اجتماعی (Social Links) --- */}
+      {/* ---(Social Links) --- */}
       <div className="flex gap-6 mt-8 items-center justify-center relative z-20">
         {socialLinks.map((social, index) => (
           <a
@@ -78,7 +77,7 @@ const Hero = ({ innerRef }) => {
             {social.icon}
           </a>
         ))}
-      </div>{' '}
+      </div>
     </section>
   );
 };

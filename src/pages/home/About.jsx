@@ -1,6 +1,7 @@
-import { FaReact, FaCss3Alt, FaHtml5, FaGithub, FaArrowCircleDown, FaBootstrap, FaGitAlt } from 'react-icons/fa';
+import React from 'react';
+import { FaReact, FaCss3Alt, FaHtml5, FaBootstrap, FaGitAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer } from 'react-icons/si';
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer, SiReact } from 'react-icons/si';
 import LogoLoop from '@/components/vendor/LogoLoop';
 
 const About = ({ innerRef }) => {
@@ -52,74 +53,73 @@ const About = ({ innerRef }) => {
       href: 'https://www.framer.com/motion/'
     }
   ];
+
   return (
-    <>
-      <section ref={innerRef} id="about" className=" flex flex-col justify-center items-center text-center p-6 ">
-        {/* About Me */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: false }}
-          className="max-w-2xl mb-12">
-          <h2 className="text-3xl inline-block md:text-5xl font-bold text-white mb-6">
-            About Me
-            <div className="relative py-2 h-1 w-full max-w-3xl mx-auto overflow-hidden">
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: false, amount: 0.6 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                style={{ transformOrigin: 'center' }}
-                className="h-1.5 bg-linear-to-r from-indigo-800 via-indigo-500 to-indigo-800 rounded-full"
-              />
-            </div>
-          </h2>
+    <section
+      ref={innerRef}
+      id="about"
+      className="flex flex-col justify-center items-center text-center py-20 px-6 relative overflow-hidden"
+    >
+      {/* پس‌زمینه محو برای جدا کردن سکشن (اختیاری) */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-          <p className="text-lg md:text-xl text-white/80 md:text-justify">
-            Front-end developer focused on designing and implementing beautiful, fast, and responsive user interfaces. I
-            am passionate about user experience (UX) and strive to create smooth and delightful experiences for users.
-            My core expertise lies in technologies such as React, and TailwindCSS. Continuously updating my technical
-            knowledge and learning new tools has always been part of my growth journey.
-            <br /> My goal is to build reliable, scalable products that perfectly align with user needs.{' '}
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center mt-6">
-            <a
-              href="https://github.com/siamand-shirzad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/60 text-white font-medium backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-              <FaGithub className="text-xl" />
-              View GitHub
-            </a>
+      {/* --- About Me Text Section --- */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true}}
+        className="max-w-3xl mb-16"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 inline-flex flex-col items-center">
+          About Me
+          {/* Animated Underline */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: '100%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-1.5 mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-full"
+          />
+        </h2>
 
-            <a
-              href="/Siamand_resume_EN.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/60 text-white font-medium backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-              <FaArrowCircleDown className="text-xl" />
-              Download CV
-            </a>
-          </div>
-        </motion.div>
+        <p className="text-lg md:text-xl text-gray-300 leading-relaxed md:leading-loose">
+          I am a passionate Front-end Developer focused on designing beautiful, fast, and responsive user interfaces. 
+          With a strong foundation in user experience (UX), I strive to create smooth and delightful digital journeys. 
+          My core expertise lies in the <span className="text-cyan-400 font-semibold">React ecosystem</span> and modern CSS frameworks.
+          <br className="hidden md:block" />
+          I am continuously learning new tools to build reliable, scalable products that perfectly align with user needs.
+        </p>
+      </motion.div>
 
-      </section>
-      {/* logoloop     */}
-      <div className="mx-auto  " style={{ width: '100%', height: '150px', position: 'relative', overflow: 'hidden' }}>
-        <LogoLoop
-          logos={techLogos}
-          speed={120}
-          direction="left"
-          logoHeight={48}
-          gap={40}
-          hoverSpeed={0}
-          scaleOnHover
-          fadeOut
-          fadeOutColor="#0d0d0d"
-          ariaLabel="Technology partners"
-        />
-      </div>
-    </>
+      {/* --- Tech Stack / Logo Loop Section --- */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 1 }}
+        viewport={{ once: true }}
+        className="w-full max-w-6xl flex flex-col items-center gap-6"
+      >
+        <h3 className="text-white/50 text-sm uppercase tracking-widest mb-4">
+          Technologies I work with
+        </h3>
+        
+        {/* کانتینر لوگو لوپ با ارتفاع و عرض مشخص */}
+        <div className="w-full relative h-[100px] mask-[image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+          <LogoLoop
+            logos={techLogos}
+            speed={100} 
+            direction="left"
+            logoHeight={50}
+            gap={50} 
+            hoverSpeed={0} 
+            scaleOnHover={1.1}
+            fadeOut={false} // فید-آوت خود کامپوننت ممکن است با ماسک CSS بالا تداخل داشته باشد
+            ariaLabel="Technology partners"
+          />
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
