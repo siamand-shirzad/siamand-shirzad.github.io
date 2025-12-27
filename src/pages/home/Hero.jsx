@@ -1,67 +1,85 @@
+import React from 'react';
 import FadeContent from '@/components/vendor/FadeContent';
 import SplitText from '@/components/vendor/SplitText';
-import { FaReact, FaCss3Alt, FaHtml5, FaGithub, FaArrowCircleDown } from 'react-icons/fa';
-import { SiTailwindcss, SiFramer } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaTelegram, FaEnvelope } from 'react-icons/fa';
+import { HiDocumentDownload } from 'react-icons/hi'; // آیکون برای دانلود رزومه
+import { CgWebsite } from 'react-icons/cg'; // آیکون برای پروژه‌ها
+import { Link } from 'react-router-dom';
 
 const Hero = ({ innerRef }) => {
-  return (
-    <>
-      <section
-        ref={innerRef}
-        id="hero"
-        className=" flex flex-col gap-6 min-h-[80vh] justify-center items-center text-center md:mb-16 ">
-        <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0} >
-          <h1 className="text-2xl md:text-4xl  text-white ">
-            Hi, I'm
-            <span className="text-4xl font-semibold md:text-6xl bg-linear-to-r from-indigo-600 via-cyan-500  to-indigo-800 bg-clip-text text-transparent gradientMove tracking-tight">
-              Siamand
-            </span>
-          </h1>
-        </FadeContent>
+  // لیست شبکه‌های اجتماعی برای تمیزتر شدن کد JSX
+  const socialLinks = [
+    { icon: <FaGithub />, link: 'https://github.com/siamand-shirzad', label: 'Github' },
+    { icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/siamand-shirzad-55986a2a4', label: 'LinkedIn' },
+    { icon: <FaTelegram />, link: 'https://t.me/Siamandshirzad', label: 'Telegram' },
+    { icon: <FaEnvelope />, link: 'mailto:siamand1381@gmail.com', label: 'Email' }
+  ];
 
-        <SplitText
-          text="React developer"
-          className="text-6xl md:text-8xl text-glow-white -tracking-wider"
-          delay={40}
-          duration={2}
-          ease="elastic.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 30 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          textAlign="center"
-          tag="h2"
-        />
-        <SplitText
-          text="A Front-End Developer specializing in React, creating modern and elegant web experiences"
-          className="text-lg md:text-2xl text-white/90 max-w-2xl mb-2"
-          delay={20}
-          duration={1}
-          ease="elastic.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 10 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          textAlign="center"
-        />
-        <div className="flex gap-4">
-          {/* <a
-            href="#projects"
-            className="px-6 py-3 bg-white text-indigo-700 font-semibold rounded-xl hover:opacity-90 transition-all">
-            View Projects
-          </a> */}
+  return (
+    <section
+      ref={innerRef}
+      id="hero"
+      className="flex flex-col gap-8 min-h-[85vh] justify-center items-center text-center px-4 md:mb-16">
+      <FadeContent blur={true} duration={1000} easing="ease-out" delay={200} initialOpacity={0}>
+        <h1 className="text-2xl md:text-4xl text-white font-light">
+          Hi, I'm{' '}
+          <span className="text-4xl font-semibold md:text-6xl bg-linear-to-r from-indigo-600 via-cyan-500 to-indigo-700 bg-clip-text gradientMove text-transparent tracking-tighter">
+            Siamand
+          </span>
+        </h1>
+      </FadeContent>
+      <SplitText
+        text="React Developer"
+        className="text-5xl md:text-8xl font-medium text-glow-white tracking-tighter drop-shadow-2xl"
+        delay={50}
+        duration={1.5}
+        ease="elastic.out"
+        splitType="chars"
+        from={{ opacity: 0, y: 40 }}
+        to={{ opacity: 1, y: 0 }}
+        threshold={0.1}
+        textAlign="center"
+        tag="h2"
+      />
+      <FadeContent blur={true} duration={1000} easing="ease-out" delay={500} initialOpacity={0}>
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          Front-End Developer specializing in React & Tailwind. I focus on clean code, performance, and elegant web 
+          design.{' '}
+        </p>
+      </FadeContent>
+      {/* --- (CTA Buttons) --- */}
+      <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center px-4">
+        <Link
+          to={'/projects'}
+          className="group relative px-8 py-3 rounded-full bg-white text-indigo-900 font-bold text-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+          View Projects
+          <CgWebsite className="text-xl group-hover:rotate-12 transition-transform" />
+        </Link>
+
+        <a
+          href="/Siamand_resume_EN.pdf"
+          target="_blank"
+          download
+          className="px-8 py-3 rounded-full border border-white/30 bg-white/5 text-white backdrop-blur-sm font-medium text-lg hover:bg-white/10 hover:border-white/60 transition-all duration-300 flex items-center justify-center gap-2">
+          Download CV
+          <HiDocumentDownload className="text-xl" />
+        </a>
+      </div>
+      {/* --- بخش شبکه‌های اجتماعی (Social Links) --- */}
+      <div className="flex gap-6 mt-8 items-center justify-center relative z-20">
+        {socialLinks.map((social, index) => (
           <a
-            href="#about"
-            className="px-6 flex gap-3 items-center py-2 border border-white/70 text-white font-semibold rounded-full hover:bg-white/20 transition-all">
-            See What I Do
-            <FaArrowCircleDown className="text-lg" />
+            key={index}
+            href={social.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.label}
+            className="text-white/60 text-2xl  hover:scale-125 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            {social.icon}
           </a>
-        </div>
-        
-      </section>
-    </>
+        ))}
+      </div>{' '}
+    </section>
   );
 };
 
