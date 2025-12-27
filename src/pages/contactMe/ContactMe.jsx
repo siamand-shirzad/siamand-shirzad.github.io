@@ -1,118 +1,137 @@
-import SocialLinks from '../../components/footer/SocialLinks';
+import React from 'react';
 import { Form, Formik } from 'formik';
 import FormikControl from '../../components/formikElements/FormikControl';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
-import { CircleCheck } from 'lucide-react';
+import SocialLinks from '../../components/footer/SocialLinks';
+import { Send } from 'lucide-react';
 
 const Contact = () => {
+  // --- منطق و ولیدیشن‌ها (بدون تغییر) ---
   const validationSchema = Yup.object({
     name: Yup.string().required('Name is required').min(2, 'Name must be at least 2 characters'),
     email: Yup.string().email('Invalid email format'),
     message: Yup.string().required('Message is required').min(10, 'Message must be at least 10 characters')
   });
 
-const onSubmit = async (values, actions) => {
-  const sendPromise = axios.post('https://api.web3forms.com/submit', {
-    access_key: 'e7732b83-2b09-4688-9a5a-35fce32dad84',
-    name: values.name,
-    email: values.email,
-    message: values.message
-  });
+  const onSubmit = async (values, actions) => {
+    const sendPromise = axios.post('https://api.web3forms.com/submit', {
+      access_key: 'e7732b83-2b09-4688-9a5a-35fce32dad84',
+      name: values.name,
+      email: values.email,
+      message: values.message
+    });
 
-  toast.promise(
-    sendPromise,
-    {
-      pending: "Sending your message...",
-      success: "Your message has been sent successfully ",
-      error: "Failed to send your message ",
-    },
-    {
-      position: "top-right",
-      hideProgressBar: false,
-      // closeOnClick: true,
-      pauseOnHover: true,
+    toast.promise(
+      sendPromise,
+      {
+        pending: "Sending your message...",
+        success: "Your message has been sent successfully ",
+        error: "Failed to send your message ",
+      },
+      {
+        position: "top-right",
+        hideProgressBar: false,
+        pauseOnHover: true,
+      }
+    );
+
+    try {
+      const res = await sendPromise;
+      if (res.data.success) {
+        actions.resetForm();
+      }
+    } catch (error) {
+      console.error(error);
     }
-  );
-
-  try {
-    const res = await sendPromise;
-
-    if (res.data.success) {
-      actions.resetForm(); // Reset form on success
-    }
-  } catch (error) {
-    console.error(error);
-  }
-};
-  // const showToast = () => {
-  //   toast(  'hello worlda'  );
-  // };
+  };
 
   const initialValues = {
     name: '',
     email: '',
     message: ''
   };
+
   return (
-    <>
-      <div className="min-h-screen  bg-black/30 text-white rounded-2xl  backdrop-blur-[1px]  px-6 py-20 flex flex-col items-center">
-        <div className="max-w-3xl w-full text-center mb-12">
-          <h2 className="text-5xl text-glow-white font-semibold  mb-4">
-            Let's stay in <br /> touch
-          </h2>
-          <p className="text-gray-400">
-            Feel free to reach out through the form below, or contact me directly via social platforms. If you have any
-            suggestions & feedbacks , I’d love to hear them too.
-          </p>
+    // تغییرات: حذف رنگ پس‌زمینه (bg-[#050505]) و حذف Orbs
+    <section className=" flex items-center justify-center py-20 px-4 relative z-10">
+      
+      {/* --- کانتینر اصلی کارت (دو ستونه) --- */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        // کارت همچنان استایل شیشه‌ای و بوردر خودش را دارد تا روی پارتیکل‌ها دیده شود
+        className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl border border-white/10 backdrop-blur-sm"
+      >
+        
+        {/* --- سمت چپ: توضیحات و سوشال --- */}
+        <div className="p-10 flex flex-col justify-between bg-gradient-to-br from-indigo-950 via-[#1a1a2e] to-[#141417]">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Let's stay in <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
+                Touch
+              </span>
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              Feel free to reach out through the form, or contact me directly via social platforms. 
+              If you have any suggestions & feedbacks, I’d love to hear them too.
+            </p>
+          </div>
+
+          <div className="mt-8">
+            <p className="text-white font-semibold mb-4 text-sm uppercase tracking-widest opacity-70">Find me on</p>
+            <div className="flex gap-4">
+               <SocialLinks className="text-3xl text-gray-400 hover:text-white transition-all hover:scale-110" />
+            </div>
+          </div>
         </div>
-        <div className="">
-          <SocialLinks className={' gap-8'} size="text-6xl" />
-        </div>
-        <div className="mt-20 md:w-1/2 bg-[#141417] p-8 rounded-2xl shadow-lg shadow-black/40 ">
-          {/* <button onClick={showToast} className="px-4 py-2 bg-blue-600 text-white rounded">
-            نمایش Toast
-          </button>{' '} */}
-          <motion.h1
-            className="text-4xl font-bold text-center text-glow-white"
-            initial={{ opacity: 0, scale: 0.75 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}>
-            Contact Me
-          </motion.h1>
-          <p className="text-gray-300 text-lg text-center mb-10">You can also send me a message directly from here.</p>
+
+        {/* --- سمت راست: باکس فرم --- */}
+        {/* رنگ پس‌زمینه #141417 حفظ شد */}
+        <div className="bg-[#141417] p-8 md:p-12 flex flex-col justify-center">
+          
+          <h1 className="text-3xl font-bold text-center text-white mb-2">Contact Me</h1>
+          <p className="text-gray-400 text-center mb-8">Send me a message directly from here.</p>
+
           <Formik
             initialValues={initialValues}
             onSubmit={onSubmit}
             validationSchema={validationSchema}
-            // validateOnChange={false}
           >
-            {formik => {
-              // console.log(formik);
-
-              return (
-                <Form noValidate className="space-y-5">
-                  <FormikControl control="input" name="name" type="text" label="Name" {...formik} />
-                  <FormikControl control="input" name="email" type="email" label="Email" />
-                  <FormikControl control="textarea" name="message" label="message" />
-                  <button
-                    disabled={formik.isSubmitting}
-                    type="submit"
-                    className="w-full cursor-pointer flex justify-center items-center gap-3 py-3 bg-indigo-600 hover:bg-indigo-800 rounded-lg text-white font-semibold transition">
-                    Send Message
-                    {formik.isSubmitting ? (
-                      <span className="w-4 inline-block h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                    ) : null}
-                  </button>
-                </Form>
-              );
-            }}
+            {formik => (
+              <Form className="space-y-5" noValidate>
+                <FormikControl control="input" name="name" type="text" label="Name" {...formik} />
+                <FormikControl control="input" name="email" type="email" label="Email" />
+                <FormikControl control="textarea" name="message" label="Message" />
+                
+                {/* دکمه گرادینت جدید */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  disabled={formik.isSubmitting}
+                  type="submit"
+                  className="w-full mt-4 cursor-pointer flex justify-center items-center gap-2 py-4 px-6 bg-gradient-to-r from-indigo-600 to-cyan-600 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] text-white font-bold rounded-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {formik.isSubmitting ? (
+                    <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                  ) : (
+                    <>
+                      Send Message <Send className="w-4 h-4" />
+                    </>
+                  )}
+                </motion.button>
+              </Form>
+            )}
           </Formik>
         </div>
-      </div>
-    </>
+
+      </motion.div>
+    </section>
   );
 };
 
