@@ -61,9 +61,6 @@ const Navbar = () => {
                   Projects
                 </Link>
 
-                <NavLink to="/blog" className="nav-link">
-                  Blog
-                </NavLink>
               </nav>
 
               <div className="nav-right hidden md:flex ">

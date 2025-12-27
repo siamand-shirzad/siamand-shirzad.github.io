@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <motion.div
-      className="relative aspect-4/3 overflow-hidden rounded-2xl bg-zinc-950 border border-white/5 shadow-xl cursor-pointer "
+      className="relative md:aspect-4/3 aspect-3/4 overflow-hidden rounded-2xl bg-zinc-950 border border-white/5 shadow-xl cursor-pointer "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       layout>
@@ -19,7 +19,7 @@ const ProjectCard = ({ project }) => {
         src={project.image}
         alt={project.title}
         className="absolute rounded inset-0 h-full w-full object-cover"
-        animate={{ scale: isHovered ? 1.02 : 0.95 }}
+        animate={{ scale: isHovered ? 1.02 : 0.9 }}
         transition={{ duration: 0.3 }}
       />
 

@@ -21,9 +21,9 @@
     box-sizing: border-box;
   }
 
-  section {
+  /* section {
     scroll-margin-top: 4rem;
-  }
+  } */
 
 }
 
@@ -37,9 +37,9 @@
     background-size: 200% 200%;
     animation: gradientShift 5s linear infinite;
   }
-  #services{
+  /* #services{
     scroll-margin-top: 12rem ;
-  }
+  } */
 
 }
 #tsparticles {

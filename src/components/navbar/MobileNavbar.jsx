@@ -20,9 +20,6 @@ const MobileNavbar = () => {
         <Link to="/projects" className="text-white" onClick={closeModal}>
           Projects
         </Link>
-        <NavLink to="/blog" className="text-white" onClick={closeModal}>
-          Blog
-        </NavLink>
         <NavLink to={'/contact'} className="btn-cta mt-2 text-glow-white" onClick={closeModal}>
           Contact Me
         </NavLink>
