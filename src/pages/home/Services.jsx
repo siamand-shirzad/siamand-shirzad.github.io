@@ -1,25 +1,25 @@
+import React from 'react';
 import SpotlightCard from '@/components/vendor/SpotlightCard';
 import { motion } from 'framer-motion';
-import {  FaCss3Alt,  FaFigma, FaMagic, FaGitAlt, } from 'react-icons/fa';
+import { FaFigma, FaGitAlt } from 'react-icons/fa';
 import { RiTailwindCssFill } from "react-icons/ri";
-import { FaCode, FaReact,  } from "react-icons/fa6";
-import { FaServer } from "react-icons/fa6";
+import { FaCode, FaReact } from "react-icons/fa6";
 import { SiAxios } from "react-icons/si";
 
-
+// آرایه مهارت‌ها (بدون تغییر)
 const skills = [
   {
-    icon: <FaReact   size={42} className="text-cyan-400" />,
+    icon: <FaReact size={42} className="text-cyan-400" />,
     title: 'Modern React Interfaces',
     desc: 'Dynamic, component-driven UIs built with the latest React patterns.'
   },
   {
-    icon: <RiTailwindCssFill  size={42} className="text-[#38BDF8]" />,
+    icon: <RiTailwindCssFill size={42} className="text-[#38BDF8]" />,
     title: 'Responsive Design',
     desc: 'Utility-first styling for clean, mobile-first layouts.'
   },
   {
-    icon: <SiAxios    size={42} className="text-[#5A29E4]" />,
+    icon: <SiAxios size={42} className="text-[#5A29E4]" />,
     title: 'Seamless API Connectivity',
     desc: 'Efficient data fetching and integration with RESTful APIs.'
   },
@@ -40,32 +40,70 @@ const skills = [
   }
 ];
 
+// --- تعریف انیمیشن‌ها ---
+// انیمیشن کانتینر گرید (برای ایجاد تأخیر بین کارت‌ها)
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15 // هر کارت 0.15 ثانیه بعد از قبلی ظاهر می‌شود
+    }
+  }
+};
+
+// انیمیشن هر کارت (ظهور از پایین با فید)
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+
 const Services = ({ innerRef }) => {
   return (
-    <section className="p-6 max-w-6xl mx-auto text-center pt-0" id="services" ref={innerRef}>
-      <h2 className="text-3xl inline-block md:text-5xl font-bold text-white mb-6">
+    // تغییر پدینگ به py-24 برای هماهنگی با سکشن‌های دیگر
+    <section className="p-6 py-24 max-w-6xl mx-auto text-center" id="services" ref={innerRef}>
+      
+      {/* --- تیتر و خط زیرین (مشابه بخش About) --- */}
+      <h2 className="text-3xl inline-block md:text-5xl font-bold text-white mb-12 relative">
         Services
-        <div className="relative py-2 h-1 w-full max-w-3xl mx-auto overflow-hidden">
-          <motion.div
+        {/* Animated Underline */}
+        <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            viewport={{ once: false, amount: 0.6 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            style={{ transformOrigin: 'center' }}
-            className="h-1.5  bg-linear-to-r from-indigo-800 via-indigo-500 to-indigo-800 rounded-full"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
+            // Fixed: bg-gradient-to-r and origin-center
+            className="h-1.5 mt-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-full origin-center absolute left-0 -bottom-4"
           />
-        </div>
       </h2>
 
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 ">
+      {/* --- گرید کارت‌ها با انیمیشن --- */}
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4  }} // وقتی ۲۰ درصد گرید دیده شد، انیمیشن شروع شود
+        className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
+      >
         {skills.map((skill, index) => (
-          <SpotlightCard key={index} className="p-6 backdrop-blur-xs border border-white/5" spotlightColor='rgba(255, 255, 255, 0.15)'>
-            <div className=" mb-2 flex justify-center">{skill.icon}</div>
-            <h3 className="text-xl  text-gray-300 text font-semibold mb-2">{skill.title}</h3>
-            <p className="text-sm opacity-80 text-primary leading-relaxed">{skill.desc}</p>
-          </SpotlightCard>
+          // هر کارت را داخل motion.div می‌گذاریم
+          <motion.div key={index} variants={cardVariants}>
+            <SpotlightCard className="p-8 backdrop-blur-sm border border-white/10 rounded-2xl h-full flex flex-col items-center text-center group hover:border-indigo-500/50 transition-colors" spotlightColor='rgba(99, 102, 241, 0.2)'>
+              <div className="mb-4 p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                {skill.icon}
+              </div>
+              <h3 className="text-xl text-white font-semibold mb-3">{skill.title}</h3>
+              {/* Fixed text color */}
+              <p className="text-sm text-gray-400 leading-relaxed">{skill.desc}</p>
+            </SpotlightCard>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

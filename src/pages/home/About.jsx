@@ -96,7 +96,7 @@ const About = ({ innerRef }) => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 1 }}
+        transition={{ delay: 1, duration: 1 }}
         viewport={{ once: true }}
         className="w-full max-w-6xl flex flex-col items-center gap-6"
       >
