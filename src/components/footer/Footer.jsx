@@ -19,8 +19,8 @@ function Footer() {
   };
 
   return (
-    <footer className="relative mt-20 pt-1 border-t border-white/5 bg-gradient-to-b from-gray-900/0 via-gray-900/40 to-black/80 backdrop-blur-xs">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"></div>
+    <footer className="relative mt-20 pt-1 border-t border-white/5 bg-linear-to-b from-gray-900/0 via-gray-900/30 to-black/80 backdrop-blur-xs">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-indigo-500/50 to-transparent"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

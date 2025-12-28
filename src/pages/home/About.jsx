@@ -61,7 +61,7 @@ const About = ({ innerRef }) => {
       className="flex flex-col scroll-mt-3 justify-center items-center text-center py-20 px-6 relative overflow-hidden"
     >
       {/* پس‌زمینه محو برای جدا کردن سکشن (اختیاری) */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
 
       {/* --- About Me Text Section --- */}
       <motion.div
@@ -78,8 +78,8 @@ const About = ({ innerRef }) => {
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-1.5 mt-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-full"
+            transition={{ duration: 0.8, delay: 0 }}
+            className="h-1.5 mt-2 bg-linear-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-full"
           />
         </h2>
 
@@ -105,7 +105,7 @@ const About = ({ innerRef }) => {
         </h3>
         
         {/* کانتینر لوگو لوپ با ارتفاع و عرض مشخص */}
-        <div className="w-full relative h-[100px] mask-[image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+        <div className="w-full relative h-[100px] mask-[image:linear-linear(to_right,transparent,white_20%,white_80%,transparent)]">
           <LogoLoop
             logos={techLogos}
             speed={100} 
