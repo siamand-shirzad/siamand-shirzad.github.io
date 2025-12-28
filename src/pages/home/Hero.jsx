@@ -31,7 +31,7 @@ const Hero = ({ innerRef }) => {
 
       <SplitText
         text="React Developer"
-        className="text-5xl md:text-8xl font-medium text-white tracking-tighter drop-shadow-2xl"
+        className="text-5xl md:text-8xl font-medium text-glow-white tracking-tighter drop-shadow-2xl"
         delay={50}
         duration={1.5}
         ease="elastic.out"
