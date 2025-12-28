@@ -18,7 +18,7 @@ const Home = () => {
 
       const targetRef = refs[id];
 
-      targetRef?.current?.scrollIntoView({ behavior: "auto", block: "center" });
+      targetRef?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [location]);
 

@@ -32,11 +32,11 @@ const About = ({ innerRef }) => {
       title: 'React',
       href: 'https://react.dev'
     },
-    {
-      node: <SiNextdotjs className="text-white hover:text-gray-700 transition-colors" />,
-      title: 'Next.js',
-      href: 'https://nextjs.org'
-    },
+    // {
+    //   node: <SiNextdotjs className="text-white hover:text-gray-700 transition-colors" />,
+    //   title: 'Next.js',
+    //   href: 'https://nextjs.org'
+    // },
     {
       node: <SiTypescript className="text-white hover:text-blue-700 transition-colors" />,
       title: 'TypeScript',
@@ -58,7 +58,7 @@ const About = ({ innerRef }) => {
     <section
       ref={innerRef}
       id="about"
-      className="flex flex-col justify-center items-center text-center py-20 px-6 relative overflow-hidden"
+      className="flex flex-col scroll-mt-3 justify-center items-center text-center py-20 px-6 relative overflow-hidden"
     >
       {/* پس‌زمینه محو برای جدا کردن سکشن (اختیاری) */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
@@ -69,7 +69,7 @@ const About = ({ innerRef }) => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true}}
-        className="max-w-3xl mb-16"
+        className="max-w-3xl mb-12"
       >
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 inline-flex flex-col items-center">
           About Me

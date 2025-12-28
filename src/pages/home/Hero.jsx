@@ -18,12 +18,12 @@ const Hero = ({ innerRef }) => {
     <section
       ref={innerRef}
       id="hero"
-      className="flex flex-col gap-8 min-h-[85vh] justify-center items-center text-center px-4 md:mb-16"
+      className="flex flex-col gap-8 scroll-mt-28 justify-center items-center text-center px-4 md:mb-16"
     >
       <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
         <h1 className="text-2xl md:text-4xl text-white font-light">
           Hi, I'm{' '}
-          <span className="text-4xl font-semibold md:text-6xl bg-gradient-to-r from-indigo-600 via-cyan-500 to-indigo-700 bg-clip-text text-transparent tracking-tighter gradientMove">
+          <span className="text-4xl font-semibold md:text-6xl bg-linear-to-r from-indigo-600 via-cyan-500 to-indigo-700 bg-clip-text text-transparent tracking-tighter gradientMove">
             Siamand
           </span>
         </h1>
@@ -82,7 +82,7 @@ const Hero = ({ innerRef }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className="text-white/60 text-2xl hover:text-cyan-400 hover:scale-125 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+            className="text-white/60 text-2xl  hover:scale-125 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
           >
             {social.icon}
           </a>
