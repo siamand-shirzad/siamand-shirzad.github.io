@@ -36,7 +36,7 @@ const Navbar = () => {
       <header className="header fixed top-0 left-0 right-0 z-50">
         <Glass className="w-[85%] md:w-[70%]  mx-auto mt-6 px-6 border border-gray-700/50 text-white">
           <motion.div
-            animate={{ height: isOpen ? '25rem' : '4rem' }}
+            animate={{ height: isOpen ? '20rem' : '4rem' }}
             transition={{ type: 'spring', stiffness: 150, damping: 15 }}
             className={`max-w-7xl mx-auto  
         `}>
