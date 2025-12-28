@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
         animate={{ height: isHovered ? '80%' : '25%' }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <ProgressiveBlur blurIntensity={ 6} className="h-full w-full" />
+        <ProgressiveBlur blurIntensity={8} className="h-full w-full" />
       </motion.div>
 
       {/* ۳. کانتینر محتوا */}

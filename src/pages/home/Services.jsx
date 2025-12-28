@@ -6,7 +6,6 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaCode, FaReact } from "react-icons/fa6";
 import { SiAxios } from "react-icons/si";
 
-// آرایه مهارت‌ها (بدون تغییر)
 const skills = [
   {
     icon: <FaReact size={42} className="text-cyan-400" />,
@@ -40,66 +39,85 @@ const skills = [
   }
 ];
 
-// --- تعریف انیمیشن‌ها ---
-// انیمیشن کانتینر گرید (برای ایجاد تأخیر بین کارت‌ها)
+// --- تنظیمات انیمیشن جدید (Cinematic Reveal) ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15 // هر کارت 0.15 ثانیه بعد از قبلی ظاهر می‌شود
+      staggerChildren: 0.15, // سرعت ظاهر شدن کارت‌ها پشت سر هم
+      delayChildren: 0.2,
     }
   }
 };
 
-// انیمیشن هر کارت (ظهور از پایین با فید)
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { 
+    y: 50,              // شروع از پایین‌تر (حرکت عمیق‌تر)
+    opacity: 0, 
+    scale: 0.9,         // شروع با سایز کمی کوچک‌تر (حس پاپ‌آپ)
+    filter: "blur(10px)" // افکت تاری اولیه
+  },
   visible: { 
+    y: 0, 
     opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    scale: 1,
+    filter: "blur(0px)", // شفاف شدن کامل
+    transition: { 
+      type: "spring",
+      bounce: 0.3,      // پرش نرم فنری
+      duration: 0.8
+    }
   }
 };
 
-
 const Services = ({ innerRef }) => {
   return (
-    // تغییر پدینگ به py-24 برای هماهنگی با سکشن‌های دیگر
     <section className="p-6 py-24 max-w-6xl mx-auto text-center" id="services" ref={innerRef}>
       
-      {/* --- تیتر و خط زیرین (مشابه بخش About) --- */}
-      <h2 className="text-3xl inline-block md:text-5xl font-bold text-white mb-12 relative">
-        Services
-        {/* Animated Underline */}
-        <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-            // Fixed: bg-gradient-to-r and origin-center
-            className="h-1.5 mt-2 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-full origin-center absolute left-0 -bottom-4"
+      {/* --- تیتر و خط زیرین --- */}
+        <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 inline-flex flex-col items-center">
+          Service
+          {/* Animated Underline */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: '100%' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0 }}
+            className="h-1.5 mt-2 bg-linear-to-r from-indigo-500 via-purple-500 to-indigo-500 rounded-full"
           />
-      </h2>
+        </h2>
 
-      {/* --- گرید کارت‌ها با انیمیشن --- */}
+      {/* --- گرید کارت‌ها با انیمیشن جدید --- */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.4  }} // وقتی ۲۰ درصد گرید دیده شد، انیمیشن شروع شود
-        className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6"
+        viewport={{ once: true, margin: "-100px" }} // با کمی فاصله از پایین صفحه شروع شود
+        className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 backdrop-blur-[2px]"
       >
         {skills.map((skill, index) => (
-          // هر کارت را داخل motion.div می‌گذاریم
-          <motion.div key={index} variants={cardVariants}>
-            <SpotlightCard className="p-8 backdrop-blur-sm border border-white/10 rounded-2xl h-full flex flex-col items-center text-center group hover:border-indigo-500/50 transition-colors" spotlightColor='rgba(99, 102, 241, 0.2)'>
-              <div className="mb-4 p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+          <motion.div 
+            key={index} 
+            variants={cardVariants}
+            // اضافه کردن هاور افکت روی کل کارت برای تعامل بیشتر
+            whileHover={{ y: -5 }} 
+            className="h-full"
+          >
+            <SpotlightCard 
+              className="p-8    border border-white/10 rounded-2xl h-full flex flex-col items-center text-center group hover:border-indigo-500/30 hover:bg-white/3 " 
+              spotlightColor='rgba(99, 102, 241, 0.25)'
+            >
+              {/* آیکون کانتینر */}
+              <div className="mb-6 p-4 rounded-full bg-white/5 border border-white/5 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/20 group-hover:scale-110 transition-all duration-300">
                 {skill.icon}
               </div>
-              <h3 className="text-xl text-white font-semibold mb-3">{skill.title}</h3>
-              {/* Fixed text color */}
-              <p className="text-sm text-gray-400 leading-relaxed">{skill.desc}</p>
+              
+              <h3 className="text-xl text-white font-bold mb-3 tracking-tight">{skill.title}</h3>
+              
+              <p className="text-sm text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors">
+                {skill.desc}
+              </p>
             </SpotlightCard>
           </motion.div>
         ))}
