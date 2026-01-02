@@ -1,13 +1,13 @@
 import React from 'react';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import SocialLinks from "./SocialLinks";
+import SocialLinks from './SocialLinks';
 
 function Footer() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleScrollLink = (hash) => {
+  const handleScrollLink = hash => {
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
@@ -27,10 +27,8 @@ function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="container mx-auto px-6 py-12"
-      >
+        className="container mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          
           {/* Brand */}
           <div className="text-center md:text-left">
             <h2 className="text-2xl font-bold text-white tracking-wide">
@@ -44,24 +42,34 @@ function Footer() {
           {/* Links */}
           <ul className="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-400">
             <li>
-                {/* تغییر رنگ هاور به سفید */}
-                <button onClick={() => handleScrollLink('hero')} className="hover:text-white transition-colors duration-300">Home</button>
+              <button
+                onClick={() => handleScrollLink('hero')}
+                className="hover:text-white transition-colors duration-300">
+                Home
+              </button>
             </li>
             <li>
-                <button onClick={() => handleScrollLink('about')} className="hover:text-white transition-colors duration-300">About</button>
+              <button
+                onClick={() => handleScrollLink('about')}
+                className="hover:text-white transition-colors duration-300">
+                About
+              </button>
             </li>
             <li>
-                <Link to="/projects" className="hover:text-white transition-colors duration-300">Projects</Link>
+              <Link to="/projects" className="hover:text-white transition-colors duration-300">
+                Projects
+              </Link>
             </li>
             <li>
-                <Link to="/contact" className="hover:text-white transition-colors duration-300">Contact</Link>
+              <Link to="/contact" className="hover:text-white transition-colors duration-300">
+                Contact
+              </Link>
             </li>
           </ul>
 
           {/* Socials */}
           <div>
-             {/* رنگ هاور آیکون‌ها هم سفید شد */}
-             <SocialLinks className="text-xl text-gray-400 hover:text-white transition-colors duration-300" />
+            <SocialLinks className="text-xl text-gray-400 hover:text-white transition-colors duration-300" />
           </div>
         </div>
 

@@ -60,8 +60,8 @@ const About = ({ innerRef }) => {
       id="about"
       className="flex flex-col scroll-mt-3 justify-center items-center text-center py-20 px-6 relative overflow-hidden"
     >
-      {/* پس‌زمینه محو برای جدا کردن سکشن (اختیاری) */}
-      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
+      {/* --- Underline --- */}
+      <div className="absolute top-0 mt-5 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
 
       {/* --- About Me Text Section --- */}
       <motion.div
@@ -104,7 +104,7 @@ const About = ({ innerRef }) => {
           Technologies I work with
         </h3>
         
-        {/* کانتینر لوگو لوپ با ارتفاع و عرض مشخص */}
+        {/* logo loop */}
         <div className="w-full relative h-[100px] mask-[image:linear-linear(to_right,transparent,white_20%,white_80%,transparent)]">
           <LogoLoop
             logos={techLogos}

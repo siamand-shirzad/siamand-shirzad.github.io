@@ -9,7 +9,6 @@ import SocialLinks from '../../components/footer/SocialLinks';
 import { Send } from 'lucide-react';
 
 const Contact = () => {
-  // --- منطق و ولیدیشن‌ها (بدون تغییر) ---
   const validationSchema = Yup.object({
     name: Yup.string().required('Name is required').min(2, 'Name must be at least 2 characters'),
     email: Yup.string().email('Invalid email format'),
@@ -55,25 +54,22 @@ const Contact = () => {
   };
 
   return (
-    // تغییرات: حذف رنگ پس‌زمینه (bg-[#050505]) و حذف Orbs
-    <section className=" flex items-center justify-center py-20 px-4 relative z-10">
+    <section className=" flex items-center justify-center  px-4 relative z-10">
       
-      {/* --- کانتینر اصلی کارت (دو ستونه) --- */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        // کارت همچنان استایل شیشه‌ای و بوردر خودش را دارد تا روی پارتیکل‌ها دیده شود
         className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl border border-white/10 backdrop-blur-sm"
       >
         
-        {/* --- سمت چپ: توضیحات و سوشال --- */}
-        <div className="p-10 flex flex-col justify-between bg-gradient-to-br from-indigo-950 via-[#1a1a2e] to-[#141417]">
+        {/* --- left side --- */}
+        <div className="p-10 flex flex-col justify-between bg-linear-to-br from-indigo-950 via-[#1a1a2e] to-[#141417]">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Let's stay in <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-indigo-400">
                 Touch
               </span>
             </h2>
@@ -91,8 +87,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* --- سمت راست: باکس فرم --- */}
-        {/* رنگ پس‌زمینه #141417 حفظ شد */}
         <div className="bg-[#141417] p-8 md:p-12 flex flex-col justify-center">
           
           <h1 className="text-3xl font-bold text-center text-white mb-2">Contact Me</h1>
@@ -115,7 +109,7 @@ const Contact = () => {
                   whileTap={{ scale: 0.98 }}
                   disabled={formik.isSubmitting}
                   type="submit"
-                  className="w-full mt-4 cursor-pointer flex justify-center items-center gap-2 py-4 px-6 bg-gradient-to-r from-indigo-600 to-cyan-600 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] text-white font-bold rounded-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full mt-4 cursor-pointer flex justify-center items-center gap-2 py-4 px-6 bg-linear-to-r from-indigo-600 to-cyan-600 hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] text-white font-bold rounded-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {formik.isSubmitting ? (
                     <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>

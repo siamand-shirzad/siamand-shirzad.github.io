@@ -5,7 +5,6 @@ import './Navbar.css';
 import Glass from '../ui/Glass';
 import MobileNavbar from './MobileNavbar';
 import { useModalStore } from '@/context/modalStore';
-import { useShallow } from 'zustand/shallow';
 import { ArrowRight } from 'lucide-react';
 
 const Navbar = () => {
@@ -65,7 +64,7 @@ const Navbar = () => {
                   </div>
                 </Link>
               </div>{' '}
-              <nav className="nav-center hidden md:flex  gap-8">
+              <nav className="nav-center text-lg tracking-tight hidden md:flex  gap-8">
                 <Link to="/#hero" className="nav-link">
                   Home
                 </Link>

@@ -38,8 +38,8 @@ const skills = [
     desc: 'Clean Git workflows for collaboration and scalability.'
   }
 ];
-
-// --- تنظیمات انیمیشن جدید (Cinematic Reveal) ---
+// -----------------chechout animation ---------------------
+// --- animate set(Cinematic Reveal) ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -75,7 +75,7 @@ const Services = ({ innerRef }) => {
   return (
     <section className="p-6 py-24 max-w-6xl mx-auto text-center" id="services" ref={innerRef}>
       
-      {/* --- تیتر و خط زیرین --- */}
+      {/* --- title--- */}
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 inline-flex flex-col items-center">
           Service
           {/* Animated Underline */}
@@ -88,19 +88,18 @@ const Services = ({ innerRef }) => {
           />
         </h2>
 
-      {/* --- گرید کارت‌ها با انیمیشن جدید --- */}
+      {/* --- grid card with animate--- */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }} // با کمی فاصله از پایین صفحه شروع شود
+        viewport={{ once: true, margin: "-100px" }}
         className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 backdrop-blur-[2px]"
       >
         {skills.map((skill, index) => (
           <motion.div 
             key={index} 
             variants={cardVariants}
-            // اضافه کردن هاور افکت روی کل کارت برای تعامل بیشتر
             whileHover={{ y: -5 }} 
             className="h-full"
           >
@@ -108,7 +107,7 @@ const Services = ({ innerRef }) => {
               className="p-8    border border-white/10 rounded-2xl h-full flex flex-col items-center text-center group hover:border-indigo-500/30 hover:bg-white/3 " 
               spotlightColor='rgba(99, 102, 241, 0.25)'
             >
-              {/* آیکون کانتینر */}
+              {/* icon container*/}
               <div className="mb-6 p-4 rounded-full bg-white/5 border border-white/5 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/20 group-hover:scale-110 transition-all duration-300">
                 {skill.icon}
               </div>
