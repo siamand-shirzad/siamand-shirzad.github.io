@@ -1,33 +1,34 @@
-import { useContext, useEffect } from 'react';
-import { SectionsContext } from '../../context/SectionsContext';
+import { useContext, useEffect, useRef } from 'react';
 import Hero from './Hero';
 import About from './About';
 import { useLocation } from 'react-router-dom';
 import Services from './Services';
 
 const Home = () => {
-  const refs = useContext(SectionsContext);
-  
-  const {hero,about,services} = refs
+  const refs = {
+    hero: useRef(null),
+    about: useRef(null),
+    services: useRef(null)
+  };
+  const { hero, about, services } = refs;
+
   const location = useLocation();
 
- useEffect(() => {
-  
+  useEffect(() => {
     if (location.hash) {
-      const id = location.hash.slice(1); 
+      const id = location.hash.slice(1);
 
       const targetRef = refs[id];
 
-      targetRef?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      targetRef?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [location]);
 
-
   return (
     <>
-    <Hero innerRef={hero}/>
-    <About innerRef={about}/>
-    <Services innerRef={services}/>
+      <Hero innerRef={hero} />
+      <About innerRef={about} />
+      <Services innerRef={services} />
     </>
   );
 };
