@@ -1,19 +1,17 @@
-import { useContext, useEffect, useRef } from 'react';
-import Hero from './Hero';
-import About from './About';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import About from './About';
+import Hero from './Hero';
 import Services from './Services';
 
 const Home = () => {
+  const location = useLocation()
   const refs = {
     hero: useRef(null),
     about: useRef(null),
     services: useRef(null)
   };
   const { hero, about, services } = refs;
-
-  const location = useLocation();
-
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1);

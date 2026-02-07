@@ -72,7 +72,7 @@ const About = ({ innerRef }) => {
         className="max-w-3xl mb-12"
       >
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 inline-flex flex-col items-center">
-          About Me
+          About
           {/* Animated Underline */}
           <motion.div
             initial={{ width: 0 }}

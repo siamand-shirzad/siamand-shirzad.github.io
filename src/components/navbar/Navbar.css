@@ -1,7 +1,8 @@
 .header {
-  /* background: linear-gradient(to bottom, #050010, transparent); */
-  user-select: none;
+  background: linear-gradient(to bottom, #050010, transparent);
 }
+/* user-select: none; */
+
 /* .landing-nav-items {
   padding: 0 2rem;
   height: 60px;
@@ -68,31 +69,33 @@
   position: relative;
   color: inherit;
   font-weight: 400;
-  opacity: 0.6; 
+  opacity: 0.6;
   text-decoration: none;
-  transition: opacity 0.25s ease, color 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease;
   padding: 0.25rem 0.35rem;
 }
 
 .nav-link:hover {
-  opacity: 0.9; 
+  opacity: 0.9;
   color: #ffffff;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -1px; 
+  bottom: -1px;
   left: 0;
   width: 0%;
   height: 1px;
-  border-radius: 999px; 
-  background: rgba(255, 255, 255, 0.7); 
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
   transition: width 0.35s ease-in-out;
 }
 
 .nav-link:hover::after {
-  width: 100%; 
+  width: 100%;
 }
 
 .nav-link.active {
@@ -106,7 +109,7 @@
 /* دکمه CTA */
 .btn-cta {
   display: inline-block;
-  padding: 0.5rem 1rem;        /* کمی بزرگتر برای readability */
+  padding: 0.5rem 1rem; /* کمی بزرگتر برای readability */
   border-radius: 22px;
   /* backdrop-filter: blur(15px);   */
   background: linear-gradient(135deg, #4f46e5, #1e3a8a);
@@ -118,12 +121,11 @@
   opacity: 0.85;
 }
 .btn-cta:hover {
-  opacity: 1;                       
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18); 
-  background-position: 100% 0%;    
-  transform: none;                  
+  opacity: 1;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+  background-position: 100% 0%;
+  transform: none;
 }
-
 
 /* hamburger menu */
 .burger {
@@ -185,3 +187,6 @@
   top: 28px;
   left: 5px;
 }
+
+/* hamburger menu is just needed & used in this file  */
+
