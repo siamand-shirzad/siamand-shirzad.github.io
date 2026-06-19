@@ -4,7 +4,6 @@ import Content from './pages/Routes';
 import ParticlesBackground from './components/vendor/ParticlesBackground';
 import { ToastContainer } from 'react-toastify';
 import ProgressBar from './components/ui/ProgressBar';
-import { SpeedInsights } from "@vercel/speed-insights/react"
 const App = () => {
   
 
@@ -24,7 +23,6 @@ const App = () => {
           bodyClassName="!text-sm !text-gray-900 "
           // progressClassName="!bg-gray-500"
         />
-      <SpeedInsights/>
     </div>
   );
 };
