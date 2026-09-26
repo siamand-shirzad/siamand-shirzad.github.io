@@ -1,12 +1,14 @@
-# React + Vite
+# Siamand Shirzad — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio: hero, about, services, project cards (desktop and mobile layouts), contact form and resume, with GSAP and Motion animations and a particles background.
 
-Currently, two official plugins are available:
+سایت پورتفولیوی شخصی.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
+React · Vite · Tailwind CSS · GSAP · Motion / framer-motion · tsParticles · Formik + Yup · Zustand · Vercel Speed Insights
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run
+```bash
+npm install
+npm run dev
+```
