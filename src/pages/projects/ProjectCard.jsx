@@ -90,7 +90,12 @@ const ProjectCard = ({ project }) => {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-3 pt-2">
-                  <motion.a
+                  {!project.demo && (
+                    <span className="flex-1 flex items-center justify-center py-3 rounded-xl bg-black/40 text-zinc-300 border border-white/10 backdrop-blur-md font-bold text-sm">
+                      Private · In production
+                    </span>
+                  )}
+                  {project.demo && <motion.a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer" // Security requirement
@@ -102,9 +107,9 @@ const ProjectCard = ({ project }) => {
                       size={18}
                       className="transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
                     />
-                  </motion.a>
+                  </motion.a>}
 
-                  <motion.a
+                  {project.github && <motion.a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -112,7 +117,7 @@ const ProjectCard = ({ project }) => {
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center justify-center p-3 rounded-xl bg-black/40 text-white border border-white/10 backdrop-blur-md transition-colors">
                     <Github size={20} />
-                  </motion.a>
+                  </motion.a>}
                 </div>
               </div>
             </motion.div>

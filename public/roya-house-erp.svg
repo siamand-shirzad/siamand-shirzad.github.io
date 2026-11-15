@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="rbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="racc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="rblur"><feGaussianBlur stdDeviation="30"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#rbg)"/>
+  <circle cx="640" cy="140" r="140" fill="#f59e0b" opacity="0.2" filter="url(#rblur)"/>
+  <circle cx="160" cy="470" r="160" fill="#ef4444" opacity="0.14" filter="url(#rblur)"/>
+
+  <!-- invoice sheet -->
+  <rect x="150" y="90" width="330" height="420" rx="14" fill="#f8fafc"/>
+  <rect x="180" y="120" width="120" height="18" rx="4" fill="url(#racc)"/>
+  <rect x="380" y="120" width="70" height="10" rx="3" fill="#cbd5e1"/>
+  <rect x="380" y="138" width="50" height="10" rx="3" fill="#cbd5e1"/>
+  <rect x="180" y="180" width="270" height="26" rx="4" fill="#1e293b"/>
+  <g fill="#cbd5e1">
+    <rect x="180" y="222" width="270" height="14" rx="3"/>
+    <rect x="180" y="250" width="270" height="14" rx="3" opacity="0.7"/>
+    <rect x="180" y="278" width="270" height="14" rx="3"/>
+    <rect x="180" y="306" width="270" height="14" rx="3" opacity="0.7"/>
+    <rect x="180" y="334" width="270" height="14" rx="3"/>
+  </g>
+  <rect x="180" y="380" width="110" height="12" rx="3" fill="#94a3b8"/>
+  <rect x="340" y="374" width="110" height="24" rx="5" fill="url(#racc)"/>
+  <rect x="180" y="440" width="80" height="40" rx="6" fill="none" stroke="#94a3b8" stroke-dasharray="5 4"/>
+  <rect x="370" y="440" width="80" height="40" rx="6" fill="none" stroke="#94a3b8" stroke-dasharray="5 4"/>
+
+  <!-- stock cards -->
+  <g fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.2">
+    <rect x="520" y="200" width="150" height="80" rx="12"/>
+    <rect x="520" y="300" width="150" height="80" rx="12"/>
+    <rect x="520" y="400" width="150" height="80" rx="12"/>
+  </g>
+  <g fill="url(#racc)">
+    <rect x="540" y="248" width="90" height="10" rx="5"/>
+    <rect x="540" y="348" width="60" height="10" rx="5"/>
+    <rect x="540" y="448" width="110" height="10" rx="5"/>
+  </g>
+  <g fill="#ffffff" opacity="0.5">
+    <rect x="540" y="222" width="60" height="10" rx="5"/>
+    <rect x="540" y="322" width="70" height="10" rx="5"/>
+    <rect x="540" y="422" width="50" height="10" rx="5"/>
+  </g>
+</svg>

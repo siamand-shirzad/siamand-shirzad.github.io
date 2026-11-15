@@ -49,4 +49,54 @@ export const projectData = [
     github: "https://github.com/siamand-shirzad/liquid-glass",
     tech: ["React", "Framer Motion", "Tailwind", "SVG Filters"]
   },
+  {
+    id: 6,
+    title: "Nexus ERP",
+    highlight: "Double-Entry Accounting",
+    description: "A small-business ERP with a full double-entry accounting module: journal entries, chart of accounts, receivables and payables, bank reconciliation with CSV/XLSX statement import, and financial reports with Excel export — alongside orders, invoices, customers and tasks.",
+    image: "/nexus-erp.png",
+    demo: "https://siamand-nexus-erp.liara.run/",
+    github: "https://github.com/siamand-shirzad/nexus-erp",
+    tech: ["Next.js", "TypeScript", "Drizzle ORM", "PostgreSQL", "Tailwind"]
+  },
+  {
+    id: 7,
+    title: "Eshop",
+    highlight: "Full-Stack Storefront",
+    description: "A luxury watch storefront with product catalog and filtering, accounts with hashed passwords, a persistent cart that merges on sign-in, and order placement and history — all served by Next.js route handlers on PostgreSQL.",
+    image: "/eshop.png",
+    demo: "https://siamand-eshop.liara.run/",
+    github: "https://github.com/siamand-shirzad/eshop",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Tailwind", "shadcn/ui"]
+  },
+  {
+    id: 8,
+    title: "The Ledger",
+    highlight: "E-Commerce Frontend",
+    description: "A storefront and admin panel wired to a Go REST API: signup and login, searchable product catalog, persistent cart, and role-guarded admin screens for categories, tags, products and saved filters.",
+    image: "/ledger.png",
+    demo: "https://ledger-ecommerce.vercel.app/",
+    github: "https://github.com/siamand-shirzad/ledger-ecommerce",
+    tech: ["React", "TypeScript", "TanStack Query", "Zustand", "React Hook Form", "Tailwind"]
+  },
+  {
+    id: 9,
+    title: "Roya House ERP",
+    highlight: "In Production · Sales & Warehouse",
+    description: "A Persian RTL sales and warehouse system used in production: proforma, invoice and goods-issue documents with multi-page PDF export, customer history, a keyboard price grid with CSV import, inventory movements, and per-user module permissions.",
+    image: "/roya-house-erp.svg",
+    demo: "",
+    github: "",
+    tech: ["React", "Express", "TypeScript", "PostgreSQL", "shadcn/ui"]
+  },
+  {
+    id: 10,
+    title: "Sepidar Financial Dashboard",
+    highlight: "In Production · Accounting Analytics",
+    description: "A Persian analytics dashboard for Sepidar accounting data: upload a database backup and it rebuilds financial KPIs, sales trends, per-module data issues, tax reports, bank reconciliation and a comparison with the previous backup.",
+    image: "/sepidar-dashboard.svg",
+    demo: "",
+    github: "",
+    tech: ["Python", "SQL Server", "Docker", "JavaScript"]
+  },
 ];
