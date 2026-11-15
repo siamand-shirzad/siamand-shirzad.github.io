@@ -42,23 +42,28 @@ const MobileProjectCard = ({ project }) => {
 
         {/* --- 3. Buttons --- */}
         <div className="grid grid-cols-2 gap-2 mt-1">
-          <a
+          {!project.demo && (
+            <span className="col-span-2 flex items-center justify-center py-3 bg-zinc-800 text-zinc-300 rounded-lg font-semibold text-xs">
+              Private · In production
+            </span>
+          )}
+          {project.demo && <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 py-3 bg-zinc-100 text-zinc-950 rounded-lg font-semibold text-xs hover:bg-zinc-200 transition-colors">
             <span>Demo</span>
             <ArrowUpRight size={14} />
-          </a>
+          </a>}
 
-          <a
+          {project.github && <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 py-2 bg-zinc-800 text-white rounded-lg font-medium text-xs hover:bg-zinc-700 transition-colors">
             <Github size={14} />
             <span>Code</span>
-          </a>
+          </a>}
         </div>
       </div>
     </div>
