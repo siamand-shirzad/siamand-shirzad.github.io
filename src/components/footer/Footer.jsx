@@ -76,10 +76,6 @@ function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/5 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
           <p>© {new Date().getFullYear()} Siamand Shirzad. All rights reserved.</p>
-          <p className="flex gap-4">
-            <span className="hover:text-gray-400 cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-gray-400 cursor-pointer transition-colors">Terms of Service</span>
-          </p>
         </div>
       </motion.div>
     </footer>
