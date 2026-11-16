@@ -1,19 +1,22 @@
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import Content from './pages/Routes';
-import ParticlesBackground from './components/vendor/ParticlesBackground';
+import { lazy, Suspense } from 'react';
+const ParticlesBackground = lazy(() => import('./components/vendor/ParticlesBackground'));
 import { ToastContainer } from 'react-toastify';
 import ProgressBar from './components/ui/ProgressBar';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 const App = () => {
   
 
   return (
     <div className="w-full flex flex-col min-h-screen relative  ">
       <ProgressBar/>
-        <ParticlesBackground />
+        <Suspense fallback={null}><ParticlesBackground /></Suspense>
         <Navbar />
         <Content />
         <Footer />
+        <SpeedInsights />
         <ToastContainer
         className={'p-6'}
           position="top-right"

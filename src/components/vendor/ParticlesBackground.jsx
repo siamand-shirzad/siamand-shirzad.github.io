@@ -1,13 +1,13 @@
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { useEffect, useState } from 'react';
-import { loadFull } from 'tsparticles';
+import { loadSlim } from '@tsparticles/slim';
 
 function ParticlesBackground() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async engine => {
-      await loadFull(engine); // <-- اینجا عوض شد
+      await loadSlim(engine);
     }).then(() => setInit(true));
   }, []);
 

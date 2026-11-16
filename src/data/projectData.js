@@ -15,7 +15,7 @@ export const projectData = [
     highlight: "Restful API & Charts",
     description: "A comprehensive dashboard for data visualization and management. Features dynamic tables, data analytics charts, and seamless integration with backend APIs for real-time CRUD operations.",
     image: "/admin-panel.png",
-    demo: "http://admin-panel-lime-one.vercel.app/",
+    demo: "https://admin-panel-lime-one.vercel.app/",
     github: "https://github.com/siamand-shirzad/admin-panel",
     tech: ["React", "Firebase", "Tailwind", "Recharts"]
   },

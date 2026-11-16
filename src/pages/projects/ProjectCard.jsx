@@ -12,7 +12,10 @@ const ProjectCard = ({ project }) => {
       layout // Enables smooth layout transitions when height expands
       className="relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-zinc-950 border border-white/5 shadow-xl cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}>
+      onMouseLeave={() => setIsHovered(false)}
+      tabIndex={0}
+      onFocus={() => setIsHovered(true)}
+      onBlur={e => !e.currentTarget.contains(e.relatedTarget) && setIsHovered(false)}>
       {/* --- 1. Background Image --- */}
       <motion.img
         src={project.image}

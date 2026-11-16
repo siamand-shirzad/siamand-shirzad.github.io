@@ -8,11 +8,11 @@ import { motion } from "framer-motion";
  */
 function SocialLinks({ className = "", size = "text-2xl", intensity = "medium" }) {
   const icons = [
-    { Icon: FaInstagram, href: "https://www.instagram.com/_sia_sh_?igsh=MWlpc2NsejJoc2EyeQ==", colorClass: "hover:text-pink-400", glow: "rgba(236,72,153,0.85)" },
-    { Icon: FaGithub, href: "https://github.com/siamand-shirzad", colorClass: "hover:text-gray-300", glow: "rgba(148,163,184,0.75)" },
-    { Icon: FaLinkedin, href: "https://www.linkedin.com/in/siamand-shirzad-55986a2a4", colorClass: "hover:text-blue-400", glow: "rgba(59,130,246,0.85)" },
-    { Icon: FaTelegram, href: "https://t.me/Siamandshirzad", colorClass: "hover:text-sky-400", glow: "rgba(56,189,248,0.85)" },
-    { Icon: FaEnvelope, href: "mailto:siamand1381@gmail.com", colorClass: "hover:text-red-400", glow: "rgba(239,68,68,0.85)" },
+    { Icon: FaInstagram, label: "Instagram", href: "https://www.instagram.com/_sia_sh_?igsh=MWlpc2NsejJoc2EyeQ==", colorClass: "hover:text-pink-400", glow: "rgba(236,72,153,0.85)" },
+    { Icon: FaGithub, label: "GitHub", href: "https://github.com/siamand-shirzad", colorClass: "hover:text-gray-300", glow: "rgba(148,163,184,0.75)" },
+    { Icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/siamand-shirzad-55986a2a4", colorClass: "hover:text-blue-400", glow: "rgba(59,130,246,0.85)" },
+    { Icon: FaTelegram, label: "Telegram", href: "https://t.me/Siamandshirzad", colorClass: "hover:text-sky-400", glow: "rgba(56,189,248,0.85)" },
+    { Icon: FaEnvelope, label: "Email", href: "mailto:siamand1381@gmail.com", colorClass: "hover:text-red-400", glow: "rgba(239,68,68,0.85)" },
   ];
 
   // تنظیمات براساس intensity
@@ -38,7 +38,7 @@ function SocialLinks({ className = "", size = "text-2xl", intensity = "medium" }
 
   return (
     <div className={`flex gap-5 justify-center flex-wrap ${className}`}>
-      {icons.map(({ Icon, href, colorClass, glow }, i) => (
+      {icons.map(({ Icon, label, href, colorClass, glow }, i) => (
         <motion.a
           key={i}
           href={href}
@@ -50,7 +50,7 @@ function SocialLinks({ className = "", size = "text-2xl", intensity = "medium" }
           transition={{ duration: cfg.duration, ease: "circOut" }}
           className={`relative ${colorClass} transition-transform outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-400 rounded-full`}
           // دسترسی: هر آیکون aria-label داشته باشه
-          aria-label={Icon.name.replace("Fa", "")}
+          aria-label={label}
           // style برای drop-shadow داینامیک (رنگ بر اساس glow)
           style={{
             // وقتی hover نیست، سایه کم باشه (یا none)
